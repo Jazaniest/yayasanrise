@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const BG_URL = '/assets/forest-bg.jpg';
 const LOGO_URL = '/assets/logo.png';
@@ -15,28 +15,7 @@ const Home = () => {
         {/* Overlay gelap tipis agar teks lebih stand out */}
         <div className="absolute inset-0 bg-black/25"></div>
       </div>
-
-      {/* Navigation */}
-      <nav className="relative z-10 flex flex-wrap justify-center items-center mt-10 gap-6 md:gap-8 py-8 text-white text-sm font-medium tracking-wide">
-         {[
-            { name: "Beranda", path: "/" },
-            { name: "Profil", path: "/profil" },
-            { name: "Struktur", path: "/struktur" },
-            { name: "Pengurus", path: "/pengurus" },
-            { name: "Visi & Misi", path: "/visi-misi" },
-            { name: "Legalitas", path: "/legalitas" },
-            { name: "Galeri", path: "/galeri" },
-        ].map((item) => (
-            <Link
-            key={item.name}
-            to={item.path}
-            className="hover:text-green-400 transition-colors duration-300 drop-shadow-md"
-            >
-            {item.name}
-            </Link>
-        ))}
-      </nav>
-
+      <Navbar />
       {/* Main Content (Hero) */}
       <main className="relative z-10 flex flex-col items-center justify-center min-h-[75vh] px-6 text-white">
         
@@ -64,7 +43,7 @@ const Home = () => {
         {/* Tagline / Deskripsi */}
         <div className="w-full max-w-3xl border-t border-white/30 pt-6">
           <p className="text-center text-sm md:text-lg font-light tracking-[0.3em] uppercase italic opacity-90 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Membangun Masa Depan Sosial dan Ekologi yang Adil, Berkelanjutan, dan Berbasis Pengetahuan.
           </p>
         </div>
 

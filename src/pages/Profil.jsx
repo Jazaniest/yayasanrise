@@ -1,22 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const LOGO_URL = '/assets/logo.png';
 const LEAF_LEFT_URL = '/assets/profil-leaf-kiri.png';
 const LEAF_RIGHT_URL = '/assets/profil-leaf-kanan.png';
 
-const menus = [
-  { name: "Beranda", path: "/" },
-  { name: "Profil", path: "/profil" },
-  { name: "Struktur", path: "/struktur" },
-  { name: "Pengurus", path: "/pengurus" },
-  { name: "Visi & Misi", path: "/visi-misi" },
-  { name: "Legalitas", path: "/legalitas" },
-  { name: "Galeri", path: "/galeri" },
-];
-
 const Profil = () => {
-    const location = useLocation();
-
     return (
     <div className="min-h-screen bg-white font-sans">
       
@@ -25,25 +13,7 @@ const Profil = () => {
         <div className="w-12">
           <img src={LOGO_URL} alt="Logo" className="w-full h-auto" />
         </div>
-        <nav className="flex gap-10 text-gray-700 text-sm font-medium">
-            {menus.map((item) => {
-                const isActive = location.pathname === item.path;
-
-                return (
-                <Link
-                    key={item.path}
-                    to={item.path}
-                    className={
-                    isActive
-                        ? "text-green-700 border-b-2 border-green-700"
-                        : "hover:text-green-700 transition"
-                    }
-                >
-                    {item.name}
-                </Link>
-                );
-            })}
-        </nav>
+        <Navbar />
         <div className="w-12 italic opacity-0">RISE</div> {/* Spacer balance */}
       </header>
 

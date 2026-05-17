@@ -1,22 +1,9 @@
-import { Link, useLocation } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
-// --- Assets Configuration ---
 const BG_URL = '/assets/forest-bg.jpg';
 const LOGO_URL = '/assets/logo.png';
 
-const menus = [
-  { name: "Beranda", path: "/" },
-  { name: "Profil", path: "/profil" },
-  { name: "Struktur", path: "/struktur" },
-  { name: "Pengurus", path: "/pengurus" },
-  { name: "Visi & Misi", path: "/visi-misi" },
-  { name: "Legalitas", path: "/legalitas" },
-  { name: "Galeri", path: "/galeri" },
-];
-
 const Galeri = () => {
-  const location = useLocation();
-  // Data dummy untuk placeholder foto (6 kotak sesuai gambar)
   const fotoGaleri = [1, 2, 3, 4, 5, 6];
 
   return (
@@ -39,25 +26,7 @@ const Galeri = () => {
           <div className="w-12">
             <img src={LOGO_URL} alt="Logo" className="w-full h-auto" />
           </div>
-          <nav className="flex flex-wrap justify-center gap-6 md:gap-10 text-gray-700 text-sm font-medium">
-            {menus.map((item) => {
-                const isActive = location.pathname === item.path;
-
-                return (
-                <Link
-                    key={item.path}
-                    to={item.path}
-                    className={
-                    isActive
-                        ? "text-green-700 border-b-2 border-green-700"
-                        : "hover:text-green-700 transition"
-                    }
-                >
-                    {item.name}
-                </Link>
-                );
-            })}
-          </nav>
+          <Navbar />
           <div className="hidden md:block w-12 opacity-0">RISE</div>
         </header>
 
