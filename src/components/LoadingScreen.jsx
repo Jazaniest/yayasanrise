@@ -41,14 +41,17 @@ const LoadingScreen = ({ onFinished }) => {
         </div>
         
         {/* Loading Dots */}
-        <div className="flex gap-2.5">
-          {[...Array(5)].map((_, i) => (
+        <div className="flex gap-2">
+        {[...Array(5)].map((_, i) => (
             <div 
-              key={i} 
-              className="w-3 h-3 bg-green-600 rounded-full animate-bounce"
-              style={{ animationDelay: `${i * 0.15}s` }}
+            key={i} 
+            className="w-3 h-3 rounded-full bg-gray-300"
+            style={{ 
+                animation: `snake 1.5s ease-in-out ${i * 0.1}s infinite`,
+                backgroundColor: '#16a34a' // green-600
+            }}
             ></div>
-          ))}
+        ))}
         </div>
       </div>
 
