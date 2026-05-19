@@ -11,9 +11,12 @@ const Footer = () => {
             <p className="text-sm text-gray-500 mt-2">
                 Pekanbaru, Riau, Indonesia
             </p>
-            <a href="mailto:contact@yayasanrise.or.id" className="text-sm text-green-800 hover:underline">
+            <a href="mailto:contact@yayasanrise.or.id" className="text-sm text-green-800 hover:underline block">
                 contact@yayasanrise.or.id
             </a>
+            <Link to="/mitra-kolaborasi#kontak" className="text-sm text-gray-500 hover:text-green-800 mt-1 inline-block">
+                Halaman kontak
+            </Link>
             </div>
 
             {/* Kanan: Dukungan */}
@@ -22,13 +25,17 @@ const Footer = () => {
                 Dukung Gerakan:
             </span>
             <nav className="flex flex-wrap gap-4 md:gap-6">
-                {['Donasi', 'Kolaborasi', 'Sponsorship'].map((item) => (
+                {[
+                  { label: 'Donasi', to: '/mitra-kolaborasi#donasi' },
+                  { label: 'Kolaborasi', to: '/mitra-kolaborasi#kolaborasi' },
+                  { label: 'Sponsorship', to: '/mitra-kolaborasi#sponsorship' },
+                ].map((item) => (
                 <Link 
-                    key={item} 
-                    to={`/${item.toLowerCase()}`} 
+                    key={item.label} 
+                    to={item.to} 
                     className="text-sm text-gray-700 hover:text-green-800 transition-colors"
                 >
-                    {item}
+                    {item.label}
                 </Link>
                 ))}
             </nav>
