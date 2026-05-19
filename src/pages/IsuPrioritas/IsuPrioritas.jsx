@@ -19,6 +19,11 @@ const IsuPrioritas = () => {
             path: "/isu-prioritas/gambut"
         },
         {
+            title: "Mangrove",
+            desc: "Restorasi ekosistem pesisir, pemetaan tutupan mangrove, dan penguatan mata pencaharian masyarakat.",
+            path: "/isu-prioritas/gambut#mangrove"
+        },
+        {
             title: "Energi",
             desc: "Mendorong transisi energi bersih, berkeadilan, dan terbarukan bagi masyarakat.",
             path: "/isu-prioritas/energi"
@@ -60,7 +65,7 @@ const IsuPrioritas = () => {
             <div className="relative z-10 flex flex-col min-h-screen">
 
                 {/* Header / Navbar */}
-                <header className="flex items-center justify-between px-6 md:px-12 py-4 bg-white/70 backdrop-blur-md shadow-xs border-b border-gray-100">
+                <header className="relative z-100 overflow-visible flex items-center justify-between px-6 md:px-12 py-4 bg-white/70 backdrop-blur-md shadow-xs border-b border-gray-100">
                     <div className="w-12">
                         <img src={LOGO_URL} alt="Logo" className="w-full h-auto" />
                     </div>
@@ -69,7 +74,7 @@ const IsuPrioritas = () => {
                 </header>
 
                 {/* Main Content */}
-                <main className="grow w-full max-w-7xl mx-auto px-4 md:px-8 py-16 flex flex-col items-center">
+                <main className="relative z-0 grow w-full max-w-7xl mx-auto px-4 md:px-8 py-16 flex flex-col items-center">
 
                     {/* Title Utama */}
                     <div className="text-center max-w-2xl mb-16 space-y-3">
@@ -78,7 +83,7 @@ const IsuPrioritas = () => {
                         </h1>
                         <div className="w-16 h-1 bg-[#4A7C44] mx-auto rounded-full" />
                         <p className="text-gray-600 text-base md:text-lg font-light leading-relaxed pt-2">
-                            Gerakan kolaboratif untuk mengintegrasikan pemberdayaan sosial masyarakat dan pelestarian ekosistem lingkungan di Indonesia.
+                            Delapan isu strategis yang menjadi fokus advokasi, riset, dan aksi lapangan Yayasan RISE di Riau dan Indonesia.
                         </p>
                     </div>
 
