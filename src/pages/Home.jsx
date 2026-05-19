@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 const BG_URL = '/assets/forest-bg.jpg';
@@ -46,6 +47,23 @@ const Home = () => {
             Membangun Masa Depan Sosial dan Ekologi yang Adil, Berkelanjutan, dan Berbasis Pengetahuan.
           </p>
         </div>
+
+        <nav className="mt-12 flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm tracking-wide">
+          {[
+            { label: "Program Kerja", to: "/program-kerja" },
+            { label: "Isu Prioritas", to: "/isu-prioritas" },
+            { label: "Publikasi & Riset", to: "/publikasi-riset" },
+            { label: "Dukung Kami", to: "/mitra-kolaborasi#donasi" },
+          ].map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="px-4 py-2 rounded-full border border-white/40 hover:bg-white/15 hover:border-green-400/60 transition-colors"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
 
       </main>
 
