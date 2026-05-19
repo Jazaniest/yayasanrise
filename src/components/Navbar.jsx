@@ -8,42 +8,42 @@ const Navbar = () => {
     { name: "Beranda", path: "/home" },
     { 
       name: "Tentang Kami", 
-      path: "/profil",
+      path: "/tentang-kami",
       subMenu: [
-        { name: "Profil Yayasan", path: "/profil" },
-        { name: "Visi & Misi", path: "/visi-misi" },
-        { name: "Nilai & Pendekatan", path: "/legalitas" },
-        { name: "Legalitas", path: "/legalitas" },
-        { name: "Tim & Tenaga Pakar", path: "/legalitas" },
+        { name: "Profil Yayasan", path: "/tentang-kami/profil" },
+        { name: "Visi & Misi", path: "/tentang-kami/visi-misi" },
+        { name: "Nilai & Pendekatan", path: "/tentang-kami/nilai-pendekatan" },
+        { name: "Legalitas", path: "/tentang-kami/legalitas" },
+        { name: "Tim & Tenaga Pakar", path: "/tentang-kami/tim-pakar" },
       ]
     },
     { 
       name: "Isu Prioritas", 
-      path: "/struktur",
+      path: "/isu-prioritas",
       subMenu: [
-        { name: "Perubahan Iklim", path: "/isu-sosial" },
-        { name: "Gambut", path: "/isu-ekologi" },
-        { name: "Energi", path: "/isu-ekologi" },
-        { name: "Konflik Agraria", path: "/isu-ekologi" },
-        { name: "Sampah", path: "/isu-ekologi" },
-        { name: "Ekonomi Hijau", path: "/isu-ekologi" },
-        { name: "Ketahanan Pangan", path: "/isu-ekologi" },
+        { name: "Perubahan Iklim", path: "/isu-prioritas/perubahan-iklim" },
+        { name: "Gambut", path: "/isu-prioritas/gambut" },
+        { name: "Energi", path: "/isu-prioritas/energi" },
+        { name: "Konflik Agraria", path: "/isu-prioritas/konflik-agraria" },
+        { name: "Sampah", path: "/isu-prioritas/sampah" },
+        { name: "Ekonomi Hijau", path: "/isu-prioritas/ekonomi-hijau" },
+        { name: "Ketahanan Pangan", path: "/isu-prioritas/ketahanan-pangan" },
       ]
     },
     { 
       name: "Program Kerja", 
-      path: "/pengurus",
+      path: "/program-kerja",
       subMenu: [
-        { name: "Research & Development", path: "/program-1" },
-        { name: "Community Empowerment", path: "/program-2" },
-        { name: "Ecological Conflict Resolution", path: "/program-2" },
-        { name: "Environmental Education", path: "/program-2" },
-        { name: "Riau Socio-Ecological Data Center", path: "/program-2" },
+        { name: "Research & Development", path: "/program-kerja/research-development" },
+        { name: "Community Empowerment", path: "/program-kerja/community-empowerment" },
+        { name: "Ecological Conflict Resolution", path: "/program-kerja/ecological-conflict-resolution" },
+        { name: "Environmental Education", path: "/program-kerja/environmental-education" },
+        { name: "Riau Socio-Ecological Data Center", path: "/program-kerja/riau-socio-eco" },
       ]
     },
     { 
       name: "Insight & Opini", 
-      path: "/visi-misi",
+      path: "/insight-opini",
     //   subMenu: [
     //     { name: "Artikel", path: "/artikel" },
     //     { name: "Opini Ahli", path: "/opini" },
@@ -51,18 +51,18 @@ const Navbar = () => {
     },
     { 
       name: "Publikasi & Riset", 
-      path: "/legalitas",
+      path: "/publikasi-riset",
       subMenu: [
-        { name: "Artikel Ilmiah", path: "/jurnal" },
-        { name: "Policy Brief", path: "/buku" },
-        { name: "Laporan Penelitian", path: "/buku" },
-        { name: "Buku/Modul", path: "/buku" },
-        { name: "Infografis Data", path: "/buku" },
+        { name: "Artikel Ilmiah", path: "/publikasi-riset/artikel-ilmiah" },
+        { name: "Policy Brief", path: "/publikasi-riset/policy-brief" },
+        { name: "Laporan Penelitian", path: "/publikasi-riset/laporan-penelitian" },
+        { name: "Buku/Modul", path: "/publikasi-riset/buku" },
+        { name: "Infografis Data", path: "/publikasi-riset/infografis-data" },
       ]
     },
     { 
       name: "Kegiatan", 
-      path: "/galeri",
+      path: "/kegiatan",
     //   subMenu: [
     //     { name: "Galeri Foto", path: "/galeri-foto" },
     //     { name: "Dokumentasi Video", path: "/galeri-video" },
@@ -70,14 +70,14 @@ const Navbar = () => {
     },
     { 
       name: "Dampak Kami", 
-      path: "/galeri",
+      path: "/dampak-kami",
     //   subMenu: [
     //     { name: "Penerima Manfaat", path: "/penerima-manfaat" },
     //   ]
     },
     { 
       name: "Mitra & Kolaborasi Kami", 
-      path: "/galeri",
+      path: "/mitra-kolaborasi",
     //   subMenu: [
     //     { name: "Daftar Mitra", path: "/mitra" },
     //     { name: "Gabung Mitra", path: "/gabung-mitra" },
@@ -99,7 +99,7 @@ const Navbar = () => {
       className={
         isHome
           ? "relative z-50 flex flex-wrap justify-center items-center mt-10 gap-6 md:gap-8 py-8 text-white text-sm font-medium tracking-wide"
-          : "flex flex-wrap justify-center items-center py-8 gap-6 md:gap-10 text-gray-700 text-sm font-medium"
+          : "flex flex-wrap justify-center items-center py-4 gap-6 md:gap-10 text-gray-700 text-sm font-medium"
       }
     >
       {menuItems.map((item) => (
