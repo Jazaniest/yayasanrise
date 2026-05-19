@@ -49,7 +49,7 @@ const TentangKami = () => {
       />
 
       {/* Header / Navbar (Konsisten dengan tema Light) */}
-      <header className="flex items-center justify-between px-10 py-4 bg-[#f1f8f1]">
+      <header className="relative z-100 overflow-visible flex items-center justify-between px-10 py-4 bg-rise-mint">
         <div className="w-12">
           <img src={LOGO_URL} alt="Logo" className="w-full h-auto" />
         </div>
@@ -65,7 +65,7 @@ const TentangKami = () => {
           Tentang Kami
         </h1>
         <p className="text-gray-500 text-center max-w-xl mb-12 font-light">
-          Gerakan kolaboratif untuk mengintegrasikan pemberdayaan sosial masyarakat dan pelestarian ekosistem lingkungan di Indonesia.
+          Mengenal identitas, nilai, legalitas, dan tim di balik Yayasan RISE Sosial Ekologis Indonesia.
         </p>
 
         {/* Kontainer Utama dengan Border Hijau Khas RISE */}
@@ -77,7 +77,7 @@ const TentangKami = () => {
             <Link
               key={index}
               to={menu.path}
-              className="group flex flex-col justify-between p-6 bg-[#fcfdfc] border border-gray-100 rounded-2xl hover:bg-[#f1f8f1] hover:border-[#4A7C44]/30 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer"
+              className="group flex flex-col justify-between p-6 bg-[#fcfdfc] border border-gray-100 rounded-2xl hover:bg-rise-mint hover:border-[#4A7C44]/30 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer"
             >
               <div>
                 {/* Penomoran Estetik */}

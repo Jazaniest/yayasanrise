@@ -20,7 +20,7 @@ const Profil = () => {
             />
 
             {/* 2. UBAH class Header: Tambahkan 'relative z-10' dan ganti bg menjadi semi-transparan (opsional) agar background forest tembus */}
-            <header className="relative z-100 flex items-center justify-between px-10 py-4 bg-[#f1f8f1]/90 backdrop-blur-sm shadow-sm">
+            <header className="relative z-100 overflow-visible flex items-center justify-between px-10 py-4 bg-rise-mint/90 backdrop-blur-sm shadow-sm">
                 <div className="w-12">
                     <img
                         src={LOGO_URL}
@@ -36,7 +36,7 @@ const Profil = () => {
             </header>
 
             {/* 3. TAMBAHKAN 'relative z-10' pada konten utama agar teks berada di atas gambar background */}
-            <main className="relative z-10 flex flex-col items-center py-12 px-6">
+            <main className="relative z-0 flex flex-col items-center py-12 px-6">
                 {/* Title */}
                 <h1 className="text-4xl md:text-5xl font-serif text-gray-800 mb-12">
                     Profil

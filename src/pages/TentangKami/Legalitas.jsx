@@ -21,7 +21,7 @@ const Legalitas = () => {
       <div className="relative z-10 flex flex-col min-h-screen">
 
         {/* Header */}
-        <header className="flex items-center justify-between px-10 py-4 bg-white/60">
+        <header className="relative z-[100] overflow-visible flex items-center justify-between px-10 py-4 bg-white/60">
           <div className="w-12">
             <img src={LOGO_URL} alt="Logo" className="w-full h-auto" />
           </div>
