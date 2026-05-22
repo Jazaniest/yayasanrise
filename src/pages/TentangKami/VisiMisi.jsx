@@ -18,7 +18,7 @@ const VisiMisi = () => {
     <div className="relative min-h-screen w-full font-sans bg-slate-50 overflow-x-hidden">
       <div className="absolute inset-0 z-0 bg-no-repeat bg-center bg-cover opacity-15 pointer-events-none" style={{ backgroundImage: `url(${BG_URL})` }} />
       <div className="relative z-10 flex flex-col min-h-screen">
-        <header className="relative z-[100] overflow-visible flex items-center justify-between px-6 md:px-12 py-4 bg-white/70 backdrop-blur-md shadow-xs border-b border-gray-100">
+        <header className="relative z-100 overflow-visible flex items-center justify-between px-6 md:px-12 py-4 bg-white/70 backdrop-blur-md shadow-xs border-b border-gray-100">
           <div className="w-12"><img src={LOGO_URL} alt="Logo" className="w-full h-auto" /></div>
           <Navbar />
           <div className="hidden md:block w-12 opacity-0">RISE</div>
@@ -27,7 +27,7 @@ const VisiMisi = () => {
         <main className="relative z-0 grow w-full max-w-5xl mx-auto px-4 md:px-8 py-16">
           <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-12">Visi & Misi</h1>
 
-          <section className="rise-card mb-10 bg-gradient-to-br from-emerald-50/80 to-white">
+          <section className="rise-card mb-10 bg-linear-to-br from-emerald-50/80 to-white">
             <h2 className="text-2xl font-serif text-rise-green mb-4 flex items-center gap-2">
               <span className="w-2 h-8 bg-rise-green rounded-full" /> Visi
             </h2>
