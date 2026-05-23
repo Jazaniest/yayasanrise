@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 
@@ -23,7 +22,6 @@ const EcologicalConflict = () => {
       </header>
 
       <main className="rise-main">
-        <Link to="/program-kerja" className="rise-breadcrumb">← Program Kerja</Link>
         <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">
           Ecological Conflict Resolution
         </h1>
@@ -46,12 +44,6 @@ const EcologicalConflict = () => {
             Pendekatan resolusi konflik berbasis keberlanjutan dan keadilan sosial-ekologis,
             menghubungkan advokasi kebijakan dengan kebutuhan masyarakat di lapangan.
           </p>
-        </div>
-
-        <div className="mt-8">
-          <Link to="/isu-prioritas/konflik-agraria" className="rise-chip hover:bg-emerald-100">
-            Isu Konflik Agraria →
-          </Link>
         </div>
       </main>
     </div>

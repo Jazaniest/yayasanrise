@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 
@@ -29,7 +28,6 @@ const CommunityEmpowerment = () => {
       </header>
 
       <main className="rise-main">
-        <Link to="/program-kerja" className="rise-breadcrumb">← Program Kerja</Link>
         <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">
           Community Empowerment
         </h1>
@@ -57,11 +55,6 @@ const CommunityEmpowerment = () => {
               </li>
             ))}
           </ul>
-        </div>
-
-        <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm">
-          <Link to="/isu-prioritas/ketahanan-pangan" className="rise-chip hover:bg-emerald-100">Ketahanan Pangan →</Link>
-          <Link to="/isu-prioritas/sampah" className="rise-chip hover:bg-emerald-100">Pengelolaan Sampah →</Link>
         </div>
       </main>
     </div>

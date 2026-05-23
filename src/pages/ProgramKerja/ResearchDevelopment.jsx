@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 
@@ -29,7 +28,6 @@ const ResearchDevelopment = () => {
       </header>
 
       <main className="rise-main">
-        <Link to="/program-kerja" className="rise-breadcrumb">← Program Kerja</Link>
         <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">
           Research & Development
         </h1>
@@ -51,15 +49,6 @@ const ResearchDevelopment = () => {
             restorasi ekosistem, serta pengembangan solusi berbasis data dan kebutuhan
             masyarakat di wilayah Riau dan Indonesia.
           </p>
-        </div>
-
-        <div className="mt-8 w-full flex flex-wrap justify-center gap-3 text-sm">
-          <Link to="/publikasi-riset" className="rise-chip hover:bg-emerald-100 transition-colors">
-            Lihat Publikasi & Riset →
-          </Link>
-          <Link to="/isu-prioritas" className="rise-chip hover:bg-emerald-100 transition-colors">
-            Isu Prioritas →
-          </Link>
         </div>
       </main>
     </div>
