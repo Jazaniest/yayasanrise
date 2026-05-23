@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 
@@ -21,7 +20,6 @@ const Buku = () => {
         <div className="w-12 opacity-0">RISE</div>
       </header>
       <main className="rise-main max-w-3xl">
-        <Link to="/publikasi-riset" className="rise-breadcrumb">← Publikasi & Riset</Link>
         <h1 className="text-4xl font-serif text-gray-800 text-center mb-2">Buku / Modul</h1>
         <p className="text-center text-gray-600 text-sm mb-8 font-light">
           Buku panduan dan modul pelatihan untuk edukasi lingkungan dan pemberdayaan.

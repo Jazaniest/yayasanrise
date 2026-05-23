@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 
@@ -22,7 +21,6 @@ const InfografisData = () => {
         <div className="w-12 opacity-0">RISE</div>
       </header>
       <main className="rise-main max-w-4xl">
-        <Link to="/publikasi-riset" className="rise-breadcrumb">← Publikasi & Riset</Link>
         <h1 className="text-4xl font-serif text-gray-800 text-center mb-2">Infografis Data</h1>
         <p className="text-center text-gray-600 text-sm mb-8 font-light">
           Visualisasi data sosial-ekologis dari Riau Socio-Ecological Data Center.
@@ -39,11 +37,6 @@ const InfografisData = () => {
             </div>
           ))}
         </div>
-        <p className="mt-8 text-center">
-          <Link to="/program-kerja/riau-socio-eco" className="rise-chip hover:bg-emerald-100 text-sm">
-            Tentang Data Center →
-          </Link>
-        </p>
       </main>
     </div>
   );
