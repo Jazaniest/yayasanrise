@@ -38,6 +38,7 @@ import Kegiatan from "./pages/Kegiatan";
 import Dampak from "./pages/Dampak";
 import Mitra from "./pages/Mitra";
 import Footer from "./components/Footer";
+import Struktur from "./pages/TentangKami/Struktur";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -60,6 +61,7 @@ export default function App() {
             <Route path="/tentang-kami/nilai-pendekatan" element={<NilaiPendekatan />} />
             <Route path="/tentang-kami/legalitas" element={<Legalitas />} />
             <Route path="/tentang-kami/tim-pakar" element={<TimPakar />} />
+            <Route path="/tentang-kami/struktur" element={<Struktur />} />
             {/* Isu Prioritas */}
             <Route path="/isu-prioritas" element={<IsuPrioritas />} />
             <Route path="/isu-prioritas/perubahan-iklim" element={<PerubahanIklim />} />

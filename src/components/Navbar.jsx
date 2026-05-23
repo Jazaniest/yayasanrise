@@ -15,6 +15,7 @@ const Navbar = () => {
         { name: "Nilai & Pendekatan", path: "/tentang-kami/nilai-pendekatan" },
         { name: "Legalitas", path: "/tentang-kami/legalitas" },
         { name: "Tim & Tenaga Pakar", path: "/tentang-kami/tim-pakar" },
+        { name: "Struktur Organisasi", path: "/tentang-kami/struktur" },
       ],
     },
     {
