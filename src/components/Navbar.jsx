@@ -11,11 +11,11 @@ const Navbar = () => {
       path: "/tentang-kami",
       subMenu: [
         { name: "Profil Yayasan", path: "/tentang-kami/profil" },
+        { name: "Struktur Organisasi", path: "/tentang-kami/struktur" },
         { name: "Visi & Misi", path: "/tentang-kami/visi-misi" },
         { name: "Nilai & Pendekatan", path: "/tentang-kami/nilai-pendekatan" },
         { name: "Legalitas", path: "/tentang-kami/legalitas" },
         { name: "Tim & Tenaga Pakar", path: "/tentang-kami/tim-pakar" },
-        { name: "Struktur Organisasi", path: "/tentang-kami/struktur" },
       ],
     },
     {
@@ -24,7 +24,7 @@ const Navbar = () => {
       subMenu: [
         { name: "Perubahan Iklim", path: "/isu-prioritas/perubahan-iklim" },
         { name: "Gambut", path: "/isu-prioritas/gambut" },
-        { name: "Mangrove", path: "/isu-prioritas/gambut#mangrove" },
+        { name: "Mangrove", path: "/isu-prioritas/mangrove" },
         { name: "Energi", path: "/isu-prioritas/energi" },
         { name: "Konflik Agraria", path: "/isu-prioritas/konflik-agraria" },
         { name: "Sampah", path: "/isu-prioritas/sampah" },
