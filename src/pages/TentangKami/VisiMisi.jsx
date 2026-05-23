@@ -1,7 +1,8 @@
 import Navbar from "../../components/Navbar";
+import Background from "../../components/Background";
 
-const BG_URL = '/assets/forest-bg.jpg';
-const LOGO_URL = '/assets/logo.png';
+// const BG_URL = "/assets/forest-bg.jpg";
+const LOGO_URL = "/assets/logo.png";
 
 const VisiMisi = () => {
   const visi = "Mewujudkan masa depan Indonesia yang adil, berkelanjutan, dan berbasis pengetahuan melalui harmoni antara pemberdayaan sosial masyarakat dan pelestarian ekosistem.";
@@ -16,7 +17,7 @@ const VisiMisi = () => {
 
   return (
     <div className="relative min-h-screen w-full font-sans bg-slate-50 overflow-x-hidden">
-      <div className="absolute inset-0 z-0 bg-no-repeat bg-center bg-cover opacity-15 pointer-events-none" style={{ backgroundImage: `url(${BG_URL})` }} />
+      <Background />
       <div className="relative z-10 flex flex-col min-h-screen">
         <header className="relative z-100 overflow-visible flex items-center justify-between px-6 md:px-12 py-4 bg-white/70 backdrop-blur-md shadow-xs border-b border-gray-100">
           <div className="w-12"><img src={LOGO_URL} alt="Logo" className="w-full h-auto" /></div>

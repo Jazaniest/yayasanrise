@@ -1,6 +1,7 @@
 import Navbar from "../../components/Navbar";
+import Background from "../../components/Background";
 
-const BG_URL = "/assets/forest-bg.jpg";
+// const BG_URL = "/assets/forest-bg.jpg";
 const LOGO_URL = "/assets/logo.png";
 const LEAF_LEFT_URL = "/assets/profil-leaf-kiri.png";
 const LEAF_RIGHT_URL = "/assets/profil-leaf-kanan.png";
@@ -11,13 +12,7 @@ const Profil = () => {
         <div className="relative min-h-screen font-sans overflow-x-hidden">
 
             {/* Background Layer (Scrollable & Opacity) */}
-            <div
-                className="absolute inset-0 z-0 bg-no-repeat bg-left bg-cover opacity-20 pointer-events-none"
-                style={{
-                    backgroundImage: `url(${BG_URL})`,
-                    backgroundAttachment: 'scroll'
-                }}
-            />
+            <Background />
 
             {/* 2. UBAH class Header: Tambahkan 'relative z-10' dan ganti bg menjadi semi-transparan (opsional) agar background forest tembus */}
             <header className="relative z-100 overflow-visible flex items-center justify-between px-10 py-4 bg-rise-mint/90 backdrop-blur-sm shadow-sm">

@@ -1,6 +1,7 @@
 import Navbar from "../../components/Navbar";
+import Background from "../../components/Background";
 
-const BG_URL = '/assets/forest-bg.jpg';
+// const BG_URL = '/assets/forest-bg.jpg';
 const LOGO_URL = '/assets/logo.png';
 const PDF_FILE_URL = '/assets/sk-rise.pdf'; // Path ke file PDF dummy kamu
 
@@ -9,19 +10,13 @@ const Legalitas = () => {
     <div className="relative min-h-screen w-full font-sans bg-white overflow-x-hidden">
 
       {/* Background Layer (Scrollable & Opacity) */}
-      <div
-        className="absolute inset-0 z-0 bg-no-repeat bg-left bg-cover opacity-20"
-        style={{
-          backgroundImage: `url(${BG_URL})`,
-          backgroundAttachment: 'scroll'
-        }}
-      />
+      <Background />
 
       {/* Content Wrapper */}
       <div className="relative z-10 flex flex-col min-h-screen">
 
         {/* Header */}
-        <header className="relative z-[100] overflow-visible flex items-center justify-between px-10 py-4 bg-white/60">
+        <header className="relative z-100 overflow-visible flex items-center justify-between px-10 py-4 bg-white/60">
           <div className="w-12">
             <img src={LOGO_URL} alt="Logo" className="w-full h-auto" />
           </div>
