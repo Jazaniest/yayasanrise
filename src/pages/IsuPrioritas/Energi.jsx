@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 
@@ -22,7 +21,6 @@ const Energi = () => {
         <div className="w-12 opacity-0">RISE</div>
       </header>
       <main className="rise-main">
-        <Link to="/isu-prioritas" className="rise-breadcrumb">← Isu Prioritas</Link>
         <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">Energi</h1>
         <p className="text-center text-gray-600 max-w-2xl mb-8 font-light leading-relaxed">
           Mendorong transisi menuju energi bersih dan terbarukan yang adil bagi masyarakat,
@@ -33,9 +31,6 @@ const Energi = () => {
           <div className="flex flex-wrap gap-2">
             {fokus.map((f) => <span key={f} className="rise-chip">{f}</span>)}
           </div>
-        </div>
-        <div className="mt-6">
-          <Link to="/program-kerja/ecological-conflict-resolution" className="rise-chip hover:bg-emerald-100">Resolusi Konflik Energi →</Link>
         </div>
       </main>
     </div>

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 
@@ -28,7 +27,6 @@ const Gambut = () => {
         <div className="w-12 opacity-0">RISE</div>
       </header>
       <main className="rise-main max-w-4xl">
-        <Link to="/isu-prioritas" className="rise-breadcrumb">← Isu Prioritas</Link>
         <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">Gambut</h1>
         <p className="text-center text-gray-600 max-w-2xl mb-8 font-light leading-relaxed">
           Ekosistem gambut menyimpan karbon besar dan menjadi prioritas restorasi serta
@@ -59,10 +57,6 @@ const Gambut = () => {
             </ul>
           </div>
         </section>
-
-        <div className="mt-6 flex flex-wrap gap-2 justify-center">
-          <Link to="/program-kerja/riau-socio-eco" className="rise-chip hover:bg-emerald-100">Data Center Riau →</Link>
-        </div>
       </main>
     </div>
   );

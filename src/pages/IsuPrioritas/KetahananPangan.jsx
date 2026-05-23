@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 
@@ -22,7 +21,6 @@ const KetahananPangan = () => {
         <div className="w-12 opacity-0">RISE</div>
       </header>
       <main className="rise-main">
-        <Link to="/isu-prioritas" className="rise-breadcrumb">← Isu Prioritas</Link>
         <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">Ketahanan Pangan</h1>
         <p className="text-center text-gray-600 max-w-2xl mb-8 font-light leading-relaxed">
           Memperkuat kemampuan masyarakat memenuhi kebutuhan pangan secara mandiri, sehat,
@@ -38,9 +36,6 @@ const KetahananPangan = () => {
               </li>
             ))}
           </ul>
-        </div>
-        <div className="mt-6">
-          <Link to="/program-kerja/community-empowerment" className="rise-chip hover:bg-emerald-100">Program Pemberdayaan →</Link>
         </div>
       </main>
     </div>

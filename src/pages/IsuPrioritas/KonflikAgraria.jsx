@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 
@@ -22,7 +21,6 @@ const KonflikAgraria = () => {
         <div className="w-12 opacity-0">RISE</div>
       </header>
       <main className="rise-main">
-        <Link to="/isu-prioritas" className="rise-breadcrumb">← Isu Prioritas</Link>
         <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">Konflik Agraria</h1>
         <p className="text-center text-gray-600 max-w-2xl mb-8 font-light leading-relaxed">
           Konflik agraria dan tata kelola lahan menjadi isu krusial di Riau. RISE mendukung
@@ -32,9 +30,6 @@ const KonflikAgraria = () => {
           {fokus.map((f) => (
             <p key={f} className="p-3 rounded-lg bg-emerald-50/60 text-gray-700 text-sm border-l-4 border-rise-green">{f}</p>
           ))}
-        </div>
-        <div className="mt-6">
-          <Link to="/program-kerja/ecological-conflict-resolution" className="rise-chip hover:bg-emerald-100">Program Resolusi Konflik →</Link>
         </div>
       </main>
     </div>

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 
@@ -23,7 +22,6 @@ const PerubahanIklim = () => {
         <div className="w-12 opacity-0">RISE</div>
       </header>
       <main className="rise-main">
-        <Link to="/isu-prioritas" className="rise-breadcrumb">← Isu Prioritas</Link>
         <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">Perubahan Iklim</h1>
         <p className="text-center text-gray-600 max-w-2xl mb-8 font-light leading-relaxed">
           Krisis iklim menuntut aksi adaptasi dan mitigasi berbasis pengetahuan serta partisipasi
@@ -36,10 +34,6 @@ const PerubahanIklim = () => {
               <li key={f} className="flex gap-2"><span className="text-rise-green">▸</span>{f}</li>
             ))}
           </ul>
-        </div>
-        <div className="mt-6 flex flex-wrap gap-2 justify-center">
-          <Link to="/program-kerja/research-development" className="rise-chip hover:bg-emerald-100">Program R&D →</Link>
-          <Link to="/program-kerja/environmental-education" className="rise-chip hover:bg-emerald-100">Edukasi Lingkungan →</Link>
         </div>
       </main>
     </div>
