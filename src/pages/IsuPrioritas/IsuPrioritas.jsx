@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import Navbar from "../../components/Navbar";
+import Background from '../../components/Background';
 
 // --- Assets Configuration ---
 const LOGO_URL = '/assets/logo.png';
-const BG_URL = '/assets/forest-bg.jpg';
+// const BG_URL = '/assets/forest-bg.jpg';
 
 const IsuPrioritas = () => {
     // Data array yang disesuaikan dengan gambar fokus isu prioritas
@@ -53,13 +54,7 @@ const IsuPrioritas = () => {
     return (
         <div className="relative min-h-screen bg-slate-50 font-sans overflow-x-hidden">
             {/* Background Layer */}
-            <div
-                className="absolute inset-0 z-0 bg-no-repeat bg-center bg-cover opacity-15 pointer-events-none"
-                style={{
-                    backgroundImage: `url(${BG_URL})`,
-                    backgroundAttachment: 'scroll'
-                }}
-            />
+            <Background />
 
             {/* Content Wrapper */}
             <div className="relative z-10 flex flex-col min-h-screen">
@@ -115,7 +110,7 @@ const IsuPrioritas = () => {
 
                                 {/* Indikator Tombol Aksi */}
                                 <div className="flex items-center justify-end mt-6 text-[#4A7C44] opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">
-                                    <span className="text-xs font-medium mr-1.5">Pelajari Selengkapnya</span>
+                                    <span className="text-xs font-medium mr-1.5">Lihat detail</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                     </svg>
