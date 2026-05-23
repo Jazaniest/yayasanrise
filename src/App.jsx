@@ -19,6 +19,7 @@ import Gambut from "./pages/IsuPrioritas/Gambut";
 import Energi from "./pages/IsuPrioritas/Energi";
 import KonflikAgraria from "./pages/IsuPrioritas/KonflikAgraria";
 import Sampah from "./pages/IsuPrioritas/Sampah";
+import Struktur from "./pages/TentangKami/Struktur";
 import KetahananPangan from "./pages/IsuPrioritas/KetahananPangan";
 import EkonomiHijau from "./pages/IsuPrioritas/EkonomiHijau";
 import ProgramKerja from "./pages/ProgramKerja/ProgramKerja";
@@ -37,8 +38,8 @@ import InfografisData from "./pages/PublikasiRiset/InfografisData";
 import Kegiatan from "./pages/Kegiatan";
 import Dampak from "./pages/Dampak";
 import Mitra from "./pages/Mitra";
+import Mangrove from "./pages/IsuPrioritas/Mangrove";
 import Footer from "./components/Footer";
-import Struktur from "./pages/TentangKami/Struktur";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -67,6 +68,7 @@ export default function App() {
             <Route path="/isu-prioritas/perubahan-iklim" element={<PerubahanIklim />} />
             <Route path="/isu-prioritas/energi" element={<Energi />} />
             <Route path="/isu-prioritas/gambut" element={<Gambut />} />
+            <Route path="/isu-prioritas/mangrove" element={<Mangrove />} />
             <Route path="/isu-prioritas/ekonomi-hijau" element={<EkonomiHijau />} />
             <Route path="/isu-prioritas/ketahanan-pangan" element={<KetahananPangan />} />
             <Route path="/isu-prioritas/konflik-agraria" element={<KonflikAgraria />} />
