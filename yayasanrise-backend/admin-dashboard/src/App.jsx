@@ -3,6 +3,7 @@ import { AuthProvider } from './context/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
 import Layout from './components/Layout';
 import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
 
 export default function App() {
   return (
@@ -11,7 +12,7 @@ export default function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={
-            <PrivateRoute><Layout><div>Dashboard Coming Soon</div></Layout></PrivateRoute>
+            <PrivateRoute><Layout><Dashboard /></Layout></PrivateRoute>
           } />
           <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Routes>
