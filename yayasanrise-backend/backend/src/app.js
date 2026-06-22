@@ -5,6 +5,7 @@ import { dirname, join } from 'path';
 import { env } from './config/env.js';
 import { sequelize, testConnection } from './config/database.js';
 import authRoutes from './routes/auth.js';
+import publikasiRoutes from './routes/publikasi.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -26,8 +27,7 @@ app.get('/api/health', (req, res) => {
 
 // Routes
 app.use('/api/v1/auth', authRoutes);
-// app.use('/api/v1/artikel-ilmiah', artikelIlmiahRoutes);
-// etc.
+app.use('/api/v1', publikasiRoutes);
 
 // Global error handler
 app.use((err, req, res, next) => {
