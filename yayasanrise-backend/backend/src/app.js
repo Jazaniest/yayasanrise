@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { env } from './config/env.js';
 import { sequelize, testConnection } from './config/database.js';
+import authRoutes from './routes/auth.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -23,8 +24,8 @@ app.get('/api/health', (req, res) => {
   res.json({ success: true, message: 'API is running', data: null });
 });
 
-// Routes placeholder
-// app.use('/api/v1/auth', authRoutes);
+// Routes
+app.use('/api/v1/auth', authRoutes);
 // app.use('/api/v1/artikel-ilmiah', artikelIlmiahRoutes);
 // etc.
 
