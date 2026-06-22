@@ -1,17 +1,29 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
+import { getTimPakar } from "../../services/timPakarService";
 
-// const BG_URL = "/assets/forest-bg.jpg";
 const LOGO_URL = "/assets/logo.png";
 
 const TimPakar = () => {
-  const tim = [
-    { nama: "Tim Riset & Kebijakan", peran: "Kajian lingkungan, iklim, agraria, dan ekonomi hijau", area: "Research & Development" },
-    { nama: "Tim Pemberdayaan", peran: "Pendampingan masyarakat dan pengembangan program lapangan", area: "Community Empowerment" },
-    { nama: "Tim Edukasi & Advokasi", peran: "Kampanye, pelatihan, dan komunikasi publik", area: "Environmental Education" },
-    { nama: "Tim Data & Spasial", peran: "Pengumpulan dan analisis data sosial-ekologis Riau", area: "Data Center" },
-  ];
+  const [tim, setTim] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getTimPakar();
+        setTim(data);
+      } catch (err) {
+        setError("Gagal memuat data tim pakar.");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="relative min-h-screen font-sans overflow-x-hidden">
@@ -27,21 +39,24 @@ const TimPakar = () => {
         <p className="text-center text-gray-600 max-w-xl mb-10 font-light text-sm">
           Sinergi profesional multidisiplin di balik gerakan RISE — dari riset hingga pendampingan lapangan.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
-          {tim.map((t) => (
-            <div key={t.nama} className="rise-card p-6! rounded-2xl! flex flex-col gap-3">
-              <div className="w-14 h-14 rounded-full bg-emerald-100 flex items-center justify-center text-2xl text-rise-green font-serif">
-                {t.nama.charAt(0)}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
+          {loading && <p className="text-center text-gray-500 col-span-full">Memuat...</p>}
+          {error && <p className="text-center text-red-500 col-span-full">{error}</p>}
+          {!loading && !error && tim.map((pakar) => (
+            <div key={pakar.id} className="text-center">
+              <div className="w-32 h-32 mx-auto rounded-full bg-cover bg-center mb-3 shadow-md" style={{ backgroundImage: `url(http://localhost:3001${pakar.foto_url})` }}>
+                {!pakar.foto_url && (
+                  <div className="w-full h-full rounded-full bg-emerald-100 flex items-center justify-center text-3xl text-rise-green font-serif">
+                    {pakar.nama.charAt(0)}
+                  </div>
+                )}
               </div>
-              <h3 className="font-serif text-lg text-gray-800">{t.nama}</h3>
-              <span className="text-xs text-rise-green font-medium uppercase tracking-wide">{t.area}</span>
-              <p className="text-sm text-gray-600 leading-relaxed">{t.peran}</p>
+              <h3 className="font-serif text-md text-gray-800">{pakar.nama}</h3>
+              <p className="text-xs text-gray-500">{pakar.jabatan}</p>
+              <p className="text-xs text-rise-green mt-1">{pakar.bidang_keahlian}</p>
             </div>
           ))}
         </div>
-        <p className="mt-8 text-center text-xs text-gray-500 italic max-w-md">
-          Profil individu tenaga pakar akan diperbarui seiring dokumentasi resmi yayasan.
-        </p>
       </main>
     </div>
   );

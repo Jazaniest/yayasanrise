@@ -1,35 +1,37 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Background from "../components/Background";
+import { getInsights } from "../services/insightService";
 
-// const BG_URL = "/assets/forest-bg.jpg";
 const LOGO_URL = "/assets/logo.png";
 
 const Insight = () => {
-  const artikel = [
-    {
-      kategori: "Opini",
-      judul: "Menuju Transisi Energi Berkeadilan di Riau",
-      tanggal: "2025",
-      ringkas: "Refleksi kebijakan energi terbarukan dan dampaknya bagi masyarakat lokal di wilayah perkebunan dan pesisir.",
-    },
-    {
-      kategori: "Analisis",
-      judul: "Restorasi Gambut: Antara Target Nasional dan Realitas Lapangan",
-      tanggal: "2025",
-      ringkas: "Tinjauan kritis tantangan restorasi ekosistem gambut dan peran masyarakat setempat.",
-    },
-    {
-      kategori: "Insight",
-      judul: "Data Sosial-Ekologis sebagai Alat Advokasi Kebijakan",
-      tanggal: "2025",
-      ringkas: "Bagaimana pusat data RISE mendukung transparansi dan pengambilan keputusan berbasis bukti.",
-    },
-  ];
+  const [artikel, setArtikel] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getInsights();
+        setArtikel(data);
+      } catch (err) {
+        setError("Gagal memuat data insight & opini.");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const truncate = (str, len) => {
+    if (!str) return "";
+    return str.length > len ? str.substring(0, len) + "..." : str;
+  };
 
   return (
     <div className="relative min-h-screen font-sans overflow-x-hidden bg-slate-50">
-      {/* <div className="absolute inset-0 z-0 bg-no-repeat bg-left bg-cover opacity-15 pointer-events-none" style={{ backgroundImage: `url(${BG_URL})` }} /> */}
       <Background />
       <header className="rise-header">
         <div className="w-12"><img src={LOGO_URL} alt="Logo" className="w-full h-auto" /></div>
@@ -42,12 +44,16 @@ const Insight = () => {
           Wacana, analisis, dan opini ahli Yayasan RISE tentang isu sosial-ekologis terkini.
         </p>
         <div className="space-y-5 w-full">
-          {artikel.map((a) => (
-            <article key={a.judul} className="rise-card p-6! rounded-2xl! hover:shadow-md transition-shadow">
-              <span className="rise-chip text-[10px] mb-3">{a.kategori}</span>
+          {loading && <p className="text-center text-gray-500">Memuat...</p>}
+          {error && <p className="text-center text-red-500">{error}</p>}
+          {!loading && !error && artikel.map((a) => (
+            <article key={a.id} className="rise-card p-6! rounded-2xl! hover:shadow-md transition-shadow">
+              <span className="rise-chip text-[10px] mb-3 capitalize">{a.kategori}</span>
               <h2 className="text-lg font-serif text-gray-800 mb-2">{a.judul}</h2>
-              <p className="text-sm text-gray-600 leading-relaxed mb-3">{a.ringkas}</p>
-              <span className="text-xs text-gray-400">{a.tanggal}</span>
+              <p className="text-sm text-gray-600 leading-relaxed mb-3">{truncate(a.konten, 200)}</p>
+              <span className="text-xs text-gray-400">
+                {a.penulis} &middot; {new Date(a.created_at).toLocaleDateString('id-ID', { year: 'numeric', month: 'long' })}
+              </span>
             </article>
           ))}
         </div>
