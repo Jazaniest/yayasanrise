@@ -1,0 +1,14 @@
+{
+  "name": "yayasanrise-admin",
+  "private": true,
+  "scripts": {
+    "dev:backend": "cd backend && npm run dev",
+    "dev:admin": "cd admin-dashboard && npm run dev",
+    "dev": "npx concurrently \"npm run dev:backend\" \"npm run dev:admin\"",
+    "install:all": "cd backend && npm install && cd ../admin-dashboard && npm install",
+    "build:admin": "cd admin-dashboard && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
