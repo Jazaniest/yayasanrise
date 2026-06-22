@@ -16,6 +16,15 @@ import BukuForm from './pages/publikasi/BukuForm';
 import InfografisList from './pages/publikasi/InfografisList';
 import InfografisForm from './pages/publikasi/InfografisForm';
 
+import KegiatanList from './pages/KegiatanList';
+import KegiatanForm from './pages/KegiatanForm';
+import TimPakarList from './pages/TimPakarList';
+import TimPakarForm from './pages/TimPakarForm';
+import InsightList from './pages/InsightList';
+import InsightForm from './pages/InsightForm';
+import MitraList from './pages/MitraList';
+import MitraForm from './pages/MitraForm';
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -37,6 +46,16 @@ export default function App() {
           <Route path="/publikasi/buku/:id" element={<PrivateRoute><Layout><BukuForm /></Layout></PrivateRoute>} />
           <Route path="/publikasi/infografis" element={<PrivateRoute><Layout><InfografisList /></Layout></PrivateRoute>} />
           <Route path="/publikasi/infografis/:id" element={<PrivateRoute><Layout><InfografisForm /></Layout></PrivateRoute>} />
+
+          {/* Konten Routes */}
+          <Route path="/kegiatan" element={<PrivateRoute><Layout><KegiatanList /></Layout></PrivateRoute>} />
+          <Route path="/kegiatan/:id" element={<PrivateRoute><Layout><KegiatanForm /></Layout></PrivateRoute>} />
+          <Route path="/tim-pakar" element={<PrivateRoute><Layout><TimPakarList /></Layout></PrivateRoute>} />
+          <Route path="/tim-pakar/:id" element={<PrivateRoute><Layout><TimPakarForm /></Layout></PrivateRoute>} />
+          <Route path="/insight" element={<PrivateRoute><Layout><InsightList /></Layout></PrivateRoute>} />
+          <Route path="/insight/:id" element={<PrivateRoute><Layout><InsightForm /></Layout></PrivateRoute>} />
+          <Route path="/mitra" element={<PrivateRoute><Layout><MitraList /></Layout></PrivateRoute>} />
+          <Route path="/mitra/:id" element={<PrivateRoute><Layout><MitraForm /></Layout></PrivateRoute>} />
 
           <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Routes>
