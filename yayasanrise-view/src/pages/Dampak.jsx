@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Background from "../components/Background";
-
-// const BG_URL = "/assets/forest-bg.jpg";
+import Footer from "../components/Footer";
 const LOGO_URL = "/assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Dampak = () => {
   const statistik = [
@@ -19,47 +18,54 @@ const Dampak = () => {
   ];
 
   return (
-    <div className="relative min-h-screen font-sans overflow-x-hidden bg-slate-50">
-      <Background />
-      <header className="rise-header">
-        <div className="w-12"><img src={LOGO_URL} alt="Logo" className="w-full h-auto" /></div>
+    <div className="min-h-screen w-full flex flex-col">
+      <header className="sticky top-0 z-50 flex items-center justify-between px-6 md:px-10 py-4 bg-white/70 backdrop-blur-md border-b border-gray-100">
+        <div className="w-12 shrink-0">
+          <Link to="/home">
+            <img src={LOGO_URL} alt="Logo" className="w-full h-auto" />
+          </Link>
+        </div>
         <Navbar />
-        <div className="w-12 opacity-0">RISE</div>
+        <div className="hidden md:block w-12" />
       </header>
-      <main className="rise-main max-w-5xl">
-        <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-3">Dampak Kami</h1>
-        <p className="text-center text-gray-600 mb-12 font-light max-w-xl">
-          Kontribusi nyata Yayasan RISE bagi masyarakat dan ekosistem di Riau — diukur melalui program, publikasi, dan kolaborasi.
-        </p>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full mb-12">
-          {statistik.map((s) => (
-            <div key={s.label} className="rise-stat">
-              <span className="text-2xl mb-2" aria-hidden>{s.icon}</span>
-              <span className="text-3xl font-serif text-rise-green font-light">{s.angka}</span>
-              <span className="text-xs text-gray-600 text-center mt-2 leading-snug">{s.label}</span>
-            </div>
-          ))}
-        </div>
-
-        <div className="rise-card w-full">
-          <h2 className="rise-section-title">Cerita Dampak</h2>
-          <ul className="space-y-4">
-            {cerita.map((c) => (
-              <li key={c} className="flex gap-3 text-gray-700 text-sm md:text-base border-l-2 border-rise-green pl-4">
-                {c}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-6 text-xs text-gray-500 italic">
-            Angka dan narasi akan diperbarui sesuai dokumentasi program terbaru.
+      <div className="relative grow">
+        <Background />
+        <main className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-3">Dampak Kami</h1>
+          <p className="text-center text-gray-600 mb-12 font-light max-w-xl">
+            Kontribusi nyata Yayasan RISE bagi masyarakat dan ekosistem di Riau — diukur melalui program, publikasi, dan kolaborasi.
           </p>
-        </div>
 
-        <div className="mt-8 text-center">
-          <Link to="/kegiatan" className="rise-chip hover:bg-emerald-100">Lihat Kegiatan →</Link>
-        </div>
-      </main>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full mb-12">
+            {statistik.map((s) => (
+              <div key={s.label} className="rise-stat">
+                <span className="text-2xl mb-2" aria-hidden>{s.icon}</span>
+                <span className="text-3xl font-serif text-rise-green font-light">{s.angka}</span>
+                <span className="text-xs text-gray-600 text-center mt-2 leading-snug">{s.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="rise-card w-full">
+            <h2 className="rise-section-title">Cerita Dampak</h2>
+            <ul className="space-y-4">
+              {cerita.map((c) => (
+                <li key={c} className="flex gap-3 text-gray-700 text-sm md:text-base border-l-2 border-rise-green pl-4">
+                  {c}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-xs text-gray-500 italic">
+              Angka dan narasi akan diperbarui sesuai dokumentasi program terbaru.
+            </p>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link to="/kegiatan" className="rise-chip hover:bg-emerald-100">Lihat Kegiatan →</Link>
+          </div>
+        </main>
+      </div>
+      <Footer />
     </div>
   );
 };

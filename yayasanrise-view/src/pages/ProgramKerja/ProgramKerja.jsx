@@ -1,8 +1,7 @@
-import { Link } from 'react-router-dom';
 import Navbar from "../../components/Navbar";
-import Background from '../../components/Background';
-
-const LOGO_URL = '/assets/logo.png';
+import Background from "../../components/Background";
+const LOGO_URL = "/assets/logo.png";
+import { Link } from "react-router-dom";
 
 const ProgramKerja = () => {
   const programs = [
@@ -39,21 +38,19 @@ const ProgramKerja = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-slate-50 font-sans overflow-x-hidden">
+    <div className="relative min-h-screen w-full font-sans bg-slate-50">
       <Background />
       <div className="relative z-10 flex flex-col min-h-screen">
-
-        {/* Header / Navbar */}
-        <header className="relative z-100 overflow-visible flex items-center justify-between px-6 md:px-12 py-4 bg-white/70 backdrop-blur-md shadow-xs border-b border-gray-100">
-          <div className="w-12">
-            <img src={LOGO_URL} alt="Logo" className="w-full h-auto" />
+        <header className="sticky top-0 z-50 flex items-center justify-between px-6 md:px-10 py-4 bg-white/70 backdrop-blur-md border-b border-gray-100">
+          <div className="w-12 flex-shrink-0">
+            <Link to="/home">
+              <img src={LOGO_URL} alt="Logo" className="w-full h-auto" />
+            </Link>
           </div>
           <Navbar />
-          <div className="hidden md:block w-12 opacity-0">RISE</div>
+          <div className="hidden md:block w-12" /> {/* This is the placeholder for centering */}
         </header>
-
-        {/* Main Content */}
-        <main className="relative z-0 grow w-full max-w-7xl mx-auto px-4 md:px-8 py-16 flex flex-col items-center">
+        <main className="rise-main relative z-0 grow w-full max-w-7xl mx-auto px-4 md:px-8 py-16 flex flex-col items-center">
 
           {/* Title Block */}
           <div className="text-center max-w-2xl mb-16 space-y-3">

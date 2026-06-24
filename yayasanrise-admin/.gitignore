@@ -3,3 +3,6 @@ node_modules/
 backend/uploads/*
 !backend/uploads/.gitkeep
 admin-dashboard/dist/
+
+backend/package-lock.json
+admin-dashboard/package-lock.json

@@ -46,59 +46,58 @@ export default function App() {
 
   return (
     <>
-      {/* Loading Screen muncul selama state isLoading bernilai true */}
       {isLoading && <LoadingScreen onFinished={() => setIsLoading(false)} />}
 
       <BrowserRouter>
-        <div>
-          <Routes>
-            {/* Redirect dari root (/) ke /home */}
-            <Route path="/" element={<Navigate to="/home" />} />
-            <Route path="/home" element={<Home />} />
-            {/* Tentang Kami */}
-            <Route path="/tentang-kami" element={<TentangKami />} />
-            <Route path="/tentang-kami/profil" element={<Profil />} />
-            <Route path="/tentang-kami/visi-misi" element={<VisiMisi />} />
-            <Route path="/tentang-kami/nilai-pendekatan" element={<NilaiPendekatan />} />
-            <Route path="/tentang-kami/legalitas" element={<Legalitas />} />
-            <Route path="/tentang-kami/tim-pakar" element={<TimPakar />} />
-            <Route path="/tentang-kami/struktur" element={<Struktur />} />
-            {/* Isu Prioritas */}
-            <Route path="/isu-prioritas" element={<IsuPrioritas />} />
-            <Route path="/isu-prioritas/perubahan-iklim" element={<PerubahanIklim />} />
-            <Route path="/isu-prioritas/energi" element={<Energi />} />
-            <Route path="/isu-prioritas/gambut" element={<Gambut />} />
-            <Route path="/isu-prioritas/mangrove" element={<Mangrove />} />
-            <Route path="/isu-prioritas/ekonomi-hijau" element={<EkonomiHijau />} />
-            <Route path="/isu-prioritas/ketahanan-pangan" element={<KetahananPangan />} />
-            <Route path="/isu-prioritas/konflik-agraria" element={<KonflikAgraria />} />
-            <Route path="/isu-prioritas/sampah" element={<Sampah />} />
-            {/* Program Kerja */}
-            <Route path="/program-kerja" element={<ProgramKerja />} />
-            <Route path="/program-kerja/research-development" element={<ResearchDevelopment />} />
-            <Route path="/program-kerja/community-empowerment" element={<CommunityEmpowerment />} />
-            <Route path="/program-kerja/ecological-conflict-resolution" element={<EcologicalConflict />} />
-            <Route path="/program-kerja/environmental-education" element={<EnvironmentalEducation />} />
-            <Route path="/program-kerja/riau-socio-eco" element={<RiauSocioEco />} />
-            {/* Insight */}
-            <Route path="/insight-opini" element={<InsightOpini />} />
-            {/* Publikasi & Riset */}
-            <Route path="/publikasi-riset" element={<PublikasiRiset />} />
-            <Route path="/publikasi-riset/artikel-ilmiah" element={<ArtikelIlmiah />} />
-            <Route path="/publikasi-riset/policy-brief" element={<PolicyBrief />} />
-            <Route path="/publikasi-riset/laporan-penelitian" element={<LaporanPenelitian />} />
-            <Route path="/publikasi-riset/buku" element={<Buku />} />
-            <Route path="/publikasi-riset/infografis-data" element={<InfografisData />} />
-            {/* Kegiatan */}
-            <Route path="/kegiatan" element={<Kegiatan />} />
-            {/* Dampak Kami */}
-            <Route path="/dampak-kami" element={<Dampak />} />
-            {/* Mitra & Kolaborasi Kami */}
-            <Route path="/mitra-kolaborasi" element={<Mitra />} />
+        <div className="flex flex-col min-h-screen">
+          <div className="grow">
+            <Routes>
+              <Route path="/" element={<Navigate to="/home" />} />
+              <Route path="/home" element={<Home />} />
+              {/* Tentang Kami */}
+              <Route path="/tentang-kami" element={<TentangKami />} />
+              <Route path="/tentang-kami/profil" element={<Profil />} />
+              <Route path="/tentang-kami/visi-misi" element={<VisiMisi />} />
+              <Route path="/tentang-kami/nilai-pendekatan" element={<NilaiPendekatan />} />
+              <Route path="/tentang-kami/legalitas" element={<Legalitas />} />
+              <Route path="/tentang-kami/tim-pakar" element={<TimPakar />} />
+              <Route path="/tentang-kami/struktur" element={<Struktur />} />
+              {/* Isu Prioritas */}
+              <Route path="/isu-prioritas" element={<IsuPrioritas />} />
+              <Route path="/isu-prioritas/perubahan-iklim" element={<PerubahanIklim />} />
+              <Route path="/isu-prioritas/energi" element={<Energi />} />
+              <Route path="/isu-prioritas/gambut" element={<Gambut />} />
+              <Route path="/isu-prioritas/mangrove" element={<Mangrove />} />
+              <Route path="/isu-prioritas/ekonomi-hijau" element={<EkonomiHijau />} />
+              <Route path="/isu-prioritas/ketahanan-pangan" element={<KetahananPangan />} />
+              <Route path="/isu-prioritas/konflik-agraria" element={<KonflikAgraria />} />
+              <Route path="/isu-prioritas/sampah" element={<Sampah />} />
+              {/* Program Kerja */}
+              <Route path="/program-kerja" element={<ProgramKerja />} />
+              <Route path="/program-kerja/research-development" element={<ResearchDevelopment />} />
+              <Route path="/program-kerja/community-empowerment" element={<CommunityEmpowerment />} />
+              <Route path="/program-kerja/ecological-conflict-resolution" element={<EcologicalConflict />} />
+              <Route path="/program-kerja/environmental-education" element={<EnvironmentalEducation />} />
+              <Route path="/program-kerja/riau-socio-eco" element={<RiauSocioEco />} />
+              {/* Insight */}
+              <Route path="/insight" element={<InsightOpini />} />
+              {/* Publikasi & Riset */}
+              <Route path="/publikasi-riset" element={<PublikasiRiset />} />
+              <Route path="/publikasi-riset/artikel-ilmiah" element={<ArtikelIlmiah />} />
+              <Route path="/publikasi-riset/policy-brief" element={<PolicyBrief />} />
+              <Route path="/publikasi-riset/laporan-penelitian" element={<LaporanPenelitian />} />
+              <Route path="/publikasi-riset/buku" element={<Buku />} />
+              <Route path="/publikasi-riset/infografis" element={<InfografisData />} />
+              {/* Kegiatan */}
+              <Route path="/kegiatan" element={<Kegiatan />} />
+              {/* Dampak Kami */}
+              <Route path="/dampak" element={<Dampak />} />
+              {/* Mitra & Kolaborasi Kami */}
+              <Route path="/mitra" element={<Mitra />} />
 
-            {/* Opsional: Route untuk 404 jika user mengetik alamat asal-asalan */}
-            <Route path="*" element={<Navigate to="/home" />} />
-          </Routes>
+              <Route path="*" element={<Navigate to="/home" />} />
+            </Routes>
+          </div>
           <Footer />
         </div>
       </BrowserRouter>

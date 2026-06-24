@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
+import { getMitra } from "../services/mitraService";
 import Navbar from "../components/Navbar";
 import Background from "../components/Background";
-import { getMitra } from "../services/mitraService";
-
 const LOGO_URL = "/assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Mitra = () => {
   const [mitra, setMitra] = useState([]);
@@ -16,7 +16,7 @@ const Mitra = () => {
         const data = await getMitra();
         setMitra(data);
       } catch (err) {
-        setError("Gagal memuat data mitra.");
+        setError("Gagal memuat data mitra." + err.message);
       } finally {
         setLoading(false);
       }
@@ -54,41 +54,38 @@ const Mitra = () => {
   );
 
   return (
-    <div className="relative min-h-screen font-sans overflow-x-hidden bg-slate-50">
+    <div className="relative min-h-screen w-full font-sans bg-slate-50">
       <Background />
-      <header className="rise-header">
-        <div className="w-12"><img src={LOGO_URL} alt="Logo" className="w-full h-auto" /></div>
-        <Navbar />
-        <div className="w-12 opacity-0">RISE</div>
-      </header>
+      <div className="relative z-10 flex flex-col min-h-screen">
+        <header className="sticky top-0 z-50 flex items-center justify-between px-6 md:px-10 py-4 bg-white/70 backdrop-blur-md border-b border-gray-100">
+          <div className="w-12 shrink-0">
+            <Link to="/home">
+              <img src={LOGO_URL} alt="Logo" className="w-full h-auto" />
+            </Link>
+          </div>
+          <Navbar />
+          <div className="hidden md:block w-12" /> {/* This is the placeholder for centering */}
+        </header>
+        <main className="rise-main max-w-5xl">
+          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-3">
+            Mitra & Kolaborasi Kami
+          </h1>
+          <p className="text-center text-gray-600 mb-16 font-light max-w-xl">
+            Kolaborasi strategis dengan lembaga mitra memperkuat dampak program sosial-ekologis di Riau.
+          </p>
 
-      <main className="rise-main max-w-5xl">
-        <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-3">
-          Mitra & Kolaborasi Kami
-        </h1>
-        <p className="text-center text-gray-600 mb-16 font-light max-w-xl">
-          Kolaborasi strategis dengan lembaga mitra memperkuat dampak program sosial-ekologis di Riau.
-        </p>
+          {loading && <p className="text-center text-gray-500 col-span-full">Memuat...</p>}
+          {error && <p className="text-center text-red-500 col-span-full">{error}</p>}
 
-        {loading && <p className="text-center text-gray-500 col-span-full">Memuat...</p>}
-        {error && <p className="text-center text-red-500 col-span-full">{error}</p>}
-
-        {!loading && !error && (
-          <>
-            {groupedMitra['donatur'] && renderGroup('Donatur', groupedMitra['donatur'])}
-            {groupedMitra['kolaborator'] && renderGroup('Kolaborator', groupedMitra['kolaborator'])}
-            {groupedMitra['sponsor'] && renderGroup('Sponsor', groupedMitra['sponsor'])}
-          </>
-        )}
-
-        <section id="kontak" className="scroll-mt-24 w-full text-center py-6 border-t border-emerald-100 mt-10">
-          <h2 className="font-serif text-gray-800 mb-2">Kontak</h2>
-          <p className="text-sm text-gray-600">Pekanbaru, Riau, Indonesia</p>
-          <a href="mailto:contact@yayasanrise.or.id" className="text-rise-green text-sm hover:underline">
-            contact@yayasanrise.or.id
-          </a>
-        </section>
-      </main>
+          {!loading && !error && (
+            <>
+              {groupedMitra['donatur'] && renderGroup('Donatur', groupedMitra['donatur'])}
+              {groupedMitra['kolaborator'] && renderGroup('Kolaborator', groupedMitra['kolaborator'])}
+              {groupedMitra['sponsor'] && renderGroup('Sponsor', groupedMitra['sponsor'])}
+            </>
+          )}
+        </main>
+      </div>
     </div>
   );
 };

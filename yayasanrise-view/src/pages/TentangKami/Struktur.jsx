@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
+import { Link } from "react-router-dom";
 
 const LOGO_URL = "/assets/logo.png";
 
@@ -61,11 +62,10 @@ const PENGAWAS = {
 // ─── AVATAR ───────────────────────────────────────────────────────────────────
 const Avatar = ({ photo, initials, isOpen }) => (
   <div
-    className={`w-20 h-20 rounded-full mx-auto mb-3 overflow-hidden flex items-center justify-center font-bold text-xl transition-all duration-300 border-2 ${
-      isOpen
+    className={`w-20 h-20 rounded-full mx-auto mb-3 overflow-hidden flex items-center justify-center font-bold text-xl transition-all duration-300 border-2 ${isOpen
         ? "bg-emerald-700 text-white border-white shadow-md scale-105"
         : "bg-white/40 text-emerald-900 border-white/60 shadow-sm"
-    }`}
+      }`}
     style={{ fontFamily: "'DM Sans', sans-serif" }}
   >
     {photo ? (
@@ -79,11 +79,10 @@ const Avatar = ({ photo, initials, isOpen }) => (
 // ─── SINGLE CARD ──────────────────────────────────────────────────────────────
 const MemberCard = ({ member, isOpen, onToggle }) => (
   <div
-    className={`flex flex-col items-center rounded-2xl py-6 px-4 transition-all duration-300 transform backdrop-blur-xl border ${
-      isOpen
+    className={`flex flex-col items-center rounded-2xl py-6 px-4 transition-all duration-300 transform backdrop-blur-xl border ${isOpen
         ? "bg-white/90 border-emerald-500/40 shadow-2xl ring-2 ring-emerald-500/10"
         : "bg-white/65 border-white/50 shadow-lg"
-    }`}
+      }`}
   >
     <button
       onClick={onToggle}
@@ -95,18 +94,17 @@ const MemberCard = ({ member, isOpen, onToggle }) => (
       <p className="text-[11px] font-bold uppercase tracking-widest mb-1 text-emerald-800 font-sans">
         {member.position}
       </p>
-      
+
       <p className="font-bold text-slate-900 text-base text-center leading-snug mb-4 font-serif min-h-11 flex items-center justify-center">
         {member.name}
       </p>
 
       {/* Toggle pill */}
       <div
-        className={`flex items-center gap-1.5 px-4 py-1 rounded-full text-xs font-semibold transition-all duration-300 shadow-sm border ${
-          isOpen
+        className={`flex items-center gap-1.5 px-4 py-1 rounded-full text-xs font-semibold transition-all duration-300 shadow-sm border ${isOpen
             ? "bg-emerald-700 text-white border-emerald-700"
             : "bg-white/80 text-emerald-800 border-emerald-600/20"
-        }`}
+          }`}
       >
         <span>{isOpen ? "Tutup" : "Lihat profil"}</span>
         <span
@@ -166,10 +164,9 @@ const Connector = () => (
   </div>
 );
 
-// ─── MAIN ─────────────────────────────────────────────────────────────────────
 const Struktur = () => {
   const [openId, setOpenId] = useState(null);
-  
+
   // Tambahkan state untuk "mengingat" data staf terakhir sebelum ditutup
   const [lastStaf, setLastStaf] = useState(null);
 
@@ -183,105 +180,103 @@ const Struktur = () => {
   }
 
   return (
-    <div className="relative min-h-screen font-sans overflow-x-hidden antialiased text-slate-800">
+    <div className="relative min-h-screen w-full font-sans bg-slate-50">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap');
       `}</style>
-
-      {/* Background */}
       <Background />
-
-      {/* Header */}
-      <header className="relative z-10 flex items-center justify-between px-10 py-4 bg-white/70 backdrop-blur-md shadow-sm border-b border-white/40">
-        <div className="w-12">
-          <img src={LOGO_URL} alt="Logo" className="w-full h-auto" />
-        </div>
-        <Navbar />
-        <div className="w-12 opacity-0">RISE</div>
-      </header>
-
-      {/* Konten */}
-      <main className="relative z-10 max-w-3xl mx-auto py-12 px-6 pb-24">
-        
-        {/* Page Title */}
-        <h1 className="text-4xl md:text-5xl mt-5 font-serif text-gray-800 mb-12 text-center">
-          Struktur Organisasi
-        </h1>
-
-        {/* Pembina */}
-        <div className="flex justify-center">
-          <div className="w-64">
-            <MemberCard
-              member={PEMBINA}
-              isOpen={openId === PEMBINA._id}
-              onToggle={() => toggle(PEMBINA._id)}
-            />
+      <div className="relative z-10 flex flex-col min-h-screen">
+        <header className="sticky top-0 z-50 flex items-center justify-between px-6 md:px-10 py-4 bg-white/70 backdrop-blur-md border-b border-gray-100">
+          <div className="w-12 shrink-0">
+            <Link to="/home">
+              <img src={LOGO_URL} alt="Logo" className="w-full h-auto" />
+            </Link>
           </div>
-        </div>
-        <InlinePanel member={PEMBINA} visible={openId === PEMBINA._id} />
+          <Navbar />
+          <div className="hidden md:block w-12" /> {/* This is the placeholder for centering */}
+        </header>
+        <main className="rise-main relative z-10 max-w-3xl mx-auto py-12 px-6 pb-24">
 
-        <Connector />
+          {/* Page Title */}
+          <h1 className="text-4xl md:text-5xl mt-5 font-serif text-gray-800 mb-12 text-center">
+            Struktur Organisasi
+          </h1>
 
-        {/* Ketua */}
-        <div className="flex justify-center">
-          <div className="w-64">
-            <MemberCard
-              member={KETUA}
-              isOpen={openId === KETUA._id}
-              onToggle={() => toggle(KETUA._id)}
-            />
-          </div>
-        </div>
-        <InlinePanel member={KETUA} visible={openId === KETUA._id} />
-
-        <Connector />
-
-        {/* Sekretaris + Bendahara */}
-        <div className="grid grid-cols-2 gap-6 items-start">
-          {STAF.map((m) => (
-            <div key={m._id} className="w-full">
+          {/* Pembina */}
+          <div className="flex justify-center">
+            <div className="w-64">
               <MemberCard
-                member={m}
-                isOpen={openId === m._id}
-                onToggle={() => toggle(m._id)}
+                member={PEMBINA}
+                isOpen={openId === PEMBINA._id}
+                onToggle={() => toggle(PEMBINA._id)}
               />
             </div>
-          ))}
+          </div>
+          <InlinePanel member={PEMBINA} visible={openId === PEMBINA._id} />
 
-          {/* Panel deskripsi melebar penuh 2 kolom */}
-          <div
-            className="col-span-2"
-            style={{
-              display: "grid",
-              gridTemplateRows: activeStaf ? "1fr" : "0fr",
-              opacity: activeStaf ? 1 : 0,
-              marginTop: activeStaf ? "16px" : "0px",
-              transition:
-                "grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, margin-top 0.3s ease",
-            }}
-          >
-            <div style={{ overflow: "hidden" }}>
-              {/* Menggunakan lastStaf agar konten tidak hilang duluan saat ditutup */}
-              {lastStaf && <PanelContent member={lastStaf} />}
+          <Connector />
+
+          {/* Ketua */}
+          <div className="flex justify-center">
+            <div className="w-64">
+              <MemberCard
+                member={KETUA}
+                isOpen={openId === KETUA._id}
+                onToggle={() => toggle(KETUA._id)}
+              />
             </div>
           </div>
-        </div>
+          <InlinePanel member={KETUA} visible={openId === KETUA._id} />
 
-        <Connector />
+          <Connector />
 
-        {/* Pengawas */}
-        <div className="flex justify-center">
-          <div className="w-64">
-            <MemberCard
-              member={PENGAWAS}
-              isOpen={openId === PENGAWAS._id}
-              onToggle={() => toggle(PENGAWAS._id)}
-            />
+          {/* Sekretaris + Bendahara */}
+          <div className="grid grid-cols-2 gap-6 items-start">
+            {STAF.map((m) => (
+              <div key={m._id} className="w-full">
+                <MemberCard
+                  member={m}
+                  isOpen={openId === m._id}
+                  onToggle={() => toggle(m._id)}
+                />
+              </div>
+            ))}
+
+            {/* Panel deskripsi melebar penuh 2 kolom */}
+            <div
+              className="col-span-2"
+              style={{
+                display: "grid",
+                gridTemplateRows: activeStaf ? "1fr" : "0fr",
+                opacity: activeStaf ? 1 : 0,
+                marginTop: activeStaf ? "16px" : "0px",
+                transition:
+                  "grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, margin-top 0.3s ease",
+              }}
+            >
+              <div style={{ overflow: "hidden" }}>
+                {/* Menggunakan lastStaf agar konten tidak hilang duluan saat ditutup */}
+                {lastStaf && <PanelContent member={lastStaf} />}
+              </div>
+            </div>
           </div>
-        </div>
-        <InlinePanel member={PENGAWAS} visible={openId === PENGAWAS._id} />
 
-      </main>
+          <Connector />
+
+          {/* Pengawas */}
+          <div className="flex justify-center">
+            <div className="w-64">
+              <MemberCard
+                member={PENGAWAS}
+                isOpen={openId === PENGAWAS._id}
+                onToggle={() => toggle(PENGAWAS._id)}
+              />
+            </div>
+          </div>
+          <InlinePanel member={PENGAWAS} visible={openId === PENGAWAS._id} />
+
+        </main>
+      </div>
     </div>
   );
 };

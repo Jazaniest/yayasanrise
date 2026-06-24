@@ -32,7 +32,7 @@ const LoadingScreen = ({ onFinished }) => {
   }, [onFinished]);
 
   return (
-    <div className={`fixed inset-0 z-9999 flex items-center justify-center bg-white shadow-2xl transition-transform duration-1000 ease-in-out transform ${position}`}>
+    <div className={`fixed inset-0 z-500 flex items-center justify-center bg-white shadow-2xl transition-transform duration-1000 ease-in-out transform ${position}`}>
       
       <div className="flex flex-col items-center gap-6">
         {/* Logo RISE */}

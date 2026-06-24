@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
+import { getAllKegiatan } from "../services/kegiatanService";
 import Navbar from "../components/Navbar";
 import Background from "../components/Background";
-import { getAllKegiatan } from "../services/kegiatanService";
-
-const LOGO_URL = '/assets/logo.png';
+import Footer from "../components/Footer";
+const LOGO_URL = "/assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Kegiatan = () => {
   const [kegiatan, setKegiatan] = useState([]);
@@ -27,16 +28,19 @@ const Kegiatan = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-full font-sans bg-slate-50 overflow-x-hidden">
-      <Background />
-      <div className="relative z-10 flex flex-col min-h-screen">
-        <header className="relative z-100 overflow-visible flex items-center justify-between px-10 py-4 bg-white/70 backdrop-blur-md border-b border-gray-100">
-          <div className="w-12"><img src={LOGO_URL} alt="Logo" className="w-full h-auto" /></div>
-          <Navbar />
-          <div className="hidden md:block w-12 opacity-0">RISE</div>
-        </header>
-
-        <main className="relative z-0 flex flex-col items-center py-16 px-6 grow max-w-6xl mx-auto w-full">
+    <div className="min-h-screen w-full flex flex-col">
+      <header className="sticky top-0 z-50 flex items-center justify-between px-6 md:px-10 py-4 bg-white/70 backdrop-blur-md border-b border-gray-100">
+        <div className="w-12 shrink-0">
+          <Link to="/home">
+            <img src={LOGO_URL} alt="Logo" className="w-full h-auto" />
+          </Link>
+        </div>
+        <Navbar />
+        <div className="hidden md:block w-12" />
+      </header>
+      <div className="relative grow">
+        <Background />
+        <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <h1 className="text-4xl md:text-5xl font-serif text-gray-800 mb-3 text-center">Kegiatan</h1>
           <p className="text-gray-600 text-center mb-12 font-light max-w-lg text-sm">
             Dokumentasi kegiatan lapangan, pelatihan, diskusi, dan kampanye Yayasan RISE.
@@ -55,7 +59,7 @@ const Kegiatan = () => {
                   <div className="aspect-video bg-cover bg-center" style={{ backgroundImage: `url(http://localhost:3001${item.foto_url})` }}>
                     {!item.foto_url && (
                       <div className="w-full h-full bg-linear-to-br from-emerald-100 to-emerald-50 flex items-center justify-center">
-                         <span className="text-emerald-700/40 text-4xl font-serif">🌿</span>
+                        <span className="text-emerald-700/40 text-4xl font-serif">🌿</span>
                       </div>
                     )}
                   </div>
@@ -72,6 +76,7 @@ const Kegiatan = () => {
           )}
         </main>
       </div>
+      <Footer />
     </div>
   );
 };
