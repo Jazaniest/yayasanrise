@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 const BG_URL = '/assets/forest-bg.jpg';
 const LOGO_URL = '/assets/logo.png';
 
@@ -47,7 +46,6 @@ const Home = () => {
           </div>
         </main>
       </div>
-      <Footer />
     </div>
   );
 };
