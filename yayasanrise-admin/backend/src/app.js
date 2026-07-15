@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { env } from './config/env.js';
@@ -9,6 +10,7 @@ import publikasiRoutes from './routes/publikasi.js';
 import kontenRoutes from './routes/konten.js';
 import dashboardRoutes from './routes/dashboard.js';
 import uploadRoutes from './routes/upload.js';
+import superadminRoutes from './routes/superadmin.route.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -19,6 +21,7 @@ const app = express();
 app.use(cors({ origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:5174'], credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 // Static uploads
 app.use('/uploads', express.static(join(__dirname, '../uploads')));
@@ -34,6 +37,7 @@ app.use('/api/v1', publikasiRoutes);
 app.use('/api/v1', kontenRoutes);
 app.use('/api/v1/dashboard', dashboardRoutes);
 app.use('/api/v1/upload', uploadRoutes);
+app.use('/api/v1/superadmin', superadminRoutes);
 
 // Global error handler
 app.use((err, req, res) => {
@@ -47,8 +51,13 @@ app.use((err, req, res) => {
 
 // Start server
 const start = async () => {
+  if (!env.JWT_SECRET) {
+    console.error('✗ FATAL ERROR: JWT_SECRET is not defined in .env file.');
+    process.exit(1);
+  }
+
   await testConnection();
-  await sequelize.sync();
+  await sequelize.sync({ alter: true }); // Use alter:true during development
   app.listen(env.PORT, () => {
     console.log(`✓ Server running on http://localhost:${env.PORT}`);
   });

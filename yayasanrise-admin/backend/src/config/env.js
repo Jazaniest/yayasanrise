@@ -14,7 +14,7 @@ export const env = {
   DB_NAME: process.env.DB_NAME || 'yayasanrise',
   DB_USER: process.env.DB_USER || 'root',
   DB_PASSWORD: process.env.DB_PASSWORD || '',
-  JWT_SECRET: process.env.JWT_SECRET || 'fallback-secret-dev-only',
+  JWT_SECRET: process.env.JWT_SECRET,
   JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN || '24h',
   UPLOAD_DIR: process.env.UPLOAD_DIR || './uploads',
 };

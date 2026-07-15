@@ -24,8 +24,11 @@ router.get('/recent', authenticate, async (req, res, next) => {
   try {
     const recent = [];
     for (const table of MODELS) {
+      // Use 'nama' for 'tim_pakar' and 'mitra', otherwise use 'judul'
+      const titleColumn = ['tim_pakar', 'mitra'].includes(table) ? 'nama' : 'judul';
+
       const [rows] = await sequelize.query(
-        `SELECT id, judul AS title, '${table}' AS type, created_at FROM \`${table}\` ORDER BY created_at DESC LIMIT 3`
+        `SELECT id, \`${titleColumn}\` AS title, '${table}' AS type, created_at FROM \`${table}\` ORDER BY created_at DESC LIMIT 3`
       );
       recent.push(...rows);
     }

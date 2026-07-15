@@ -9,22 +9,20 @@ export default function BukuForm() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(isEdit);
   const [saving, setSaving] = useState(false);
-  const [form, setForm] = useState({ judul: '', penulis: '', deskripsi: '', cover_url: '', file_url: '', tahun: '', status: 'draft' });
+  const [form, setForm] = useState({ judul: '', penulis: '', deskripsi: '', cover_url: '', whatsapp_number: '', tahun: '', status: 'draft' });
   const [coverFile, setCoverFile] = useState(null);
-  const [bookFile, setBookFile] = useState(null);
 
   useEffect(() => {
     if (isEdit) {
       api.get(`/buku/${id}`).then(res => {
         const d = res.data.data;
-        setForm({ judul: d.judul || '', penulis: d.penulis || '', deskripsi: d.deskripsi || '', cover_url: d.cover_url || '', file_url: d.file_url || '', tahun: d.tahun || '', status: d.status || 'draft' });
+        setForm({ judul: d.judul || '', penulis: d.penulis || '', deskripsi: d.deskripsi || '', cover_url: d.cover_url || '', whatsapp_number: d.whatsapp_number || '', tahun: d.tahun || '', status: d.status || 'draft' });
       }).catch(console.error).finally(() => setLoading(false));
     }
   }, [id, isEdit]);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
   const handleCoverFileChange = (e) => setCoverFile(e.target.files[0]);
-  const handleBookFileChange = (e) => setBookFile(e.target.files[0]);
 
   const uploadFile = async (file) => {
     const formData = new FormData();
@@ -41,9 +39,6 @@ export default function BukuForm() {
     try {
       if (coverFile) {
         payload.cover_url = await uploadFile(coverFile);
-      }
-      if (bookFile) {
-        payload.file_url = await uploadFile(bookFile);
       }
 
       if (isEdit) {
@@ -71,10 +66,9 @@ export default function BukuForm() {
         <FormField label="Judul" name="judul" value={form.judul} onChange={handleChange} required />
         <FormField label="Penulis" name="penulis" value={form.penulis} onChange={handleChange} />
         <FormField label="Deskripsi" name="deskripsi" type="textarea" value={form.deskripsi} onChange={handleChange} />
+        <FormField label="Nomor WhatsApp" name="whatsapp_number" value={form.whatsapp_number} onChange={handleChange} placeholder="e.g. 6281234567890" />
         <FormField label="Upload Cover (Gambar)" name="coverFile" type="file" onChange={handleCoverFileChange} />
         {form.cover_url && !coverFile && <p className="text-sm text-gray-500">Cover saat ini: <a href={form.cover_url} target="_blank" rel="noopener noreferrer"><img src={form.cover_url} alt="cover" className="w-20 h-auto"/></a></p>}
-        <FormField label="Upload File Buku (PDF)" name="bookFile" type="file" onChange={handleBookFileChange} />
-        {form.file_url && !bookFile && <p className="text-sm text-gray-500">File saat ini: <a href={form.file_url} target="_blank" rel="noopener noreferrer" className="text-emerald-600">{form.file_url}</a></p>}
         <FormField label="Tahun" name="tahun" value={form.tahun} onChange={handleChange} />
         <FormField label="Status" name="status" type="select" value={form.status} onChange={handleChange} options={['draft', 'published']} />
 

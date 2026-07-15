@@ -1,30 +1,16 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api/v1',
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3001/api/v1',
+  withCredentials: true, // Send cookies with every request
   headers: { 'Content-Type': 'application/json' },
 });
 
-// Attach JWT from localStorage
-api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token');
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-  return config;
-});
+// The request interceptor for localStorage is no longer needed,
+// as the browser handles the cookie automatically.
 
-// Handle 401 → redirect to login
-api.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    if (error.response?.status === 401) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('admin');
-      window.location.href = '/login';
-    }
-    return Promise.reject(error);
-  }
-);
+// The response interceptor that caused the reload loop is removed.
+// Error handling should be done within the components or context that make the API call.
+// For example, AuthContext already handles the 401 from /me correctly.
 
 export default api;

@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 const menuGroups = [
   {
@@ -29,6 +30,8 @@ const menuGroups = [
 ];
 
 export default function Sidebar() {
+  const { admin } = useAuth();
+
   return (
     <aside className="w-64 bg-white border-r border-gray-200 min-h-screen flex flex-col">
       <div className="p-5 border-b border-gray-100">
@@ -61,6 +64,29 @@ export default function Sidebar() {
             </div>
           </div>
         ))}
+
+        {admin && admin.role === 'superadmin' && (
+          <div>
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider px-3 mb-2">
+              Administrasi
+            </p>
+            <div className="space-y-1">
+              <NavLink
+                to="/admin-management"
+                className={({ isActive }) =>
+                  `flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition ${
+                    isActive
+                      ? 'bg-emerald-50 text-emerald-800 font-medium'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
+                  }`
+                }
+              >
+                <span className="text-base">⚙️</span>
+                Kelola Admin
+              </NavLink>
+            </div>
+          </div>
+        )}
       </nav>
     </aside>
   );

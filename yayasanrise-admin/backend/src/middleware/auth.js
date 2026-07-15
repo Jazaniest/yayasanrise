@@ -4,12 +4,11 @@ import Admin from '../models/Admin.js';
 
 export const authenticate = async (req, res, next) => {
   try {
-    const header = req.headers.authorization;
-    if (!header || !header.startsWith('Bearer ')) {
+    const { token } = req.cookies;
+    if (!token) {
       return res.status(401).json({ success: false, message: 'No token provided', data: null });
     }
 
-    const token = header.split(' ')[1];
     const decoded = jwt.verify(token, env.JWT_SECRET);
     const admin = await Admin.findByPk(decoded.id);
 

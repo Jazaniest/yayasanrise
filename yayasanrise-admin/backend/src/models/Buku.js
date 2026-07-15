@@ -6,7 +6,7 @@ const Buku = sequelize.define('Buku', {
   penulis: DataTypes.STRING,
   deskripsi: DataTypes.TEXT,
   cover_url: DataTypes.STRING(500),
-  file_url: DataTypes.STRING(500),
+  whatsapp_number: DataTypes.STRING,
   tahun: DataTypes.STRING(4),
   status: { type: DataTypes.ENUM('draft', 'published'), defaultValue: 'draft' },
 }, { tableName: 'buku' });

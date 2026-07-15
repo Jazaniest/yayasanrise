@@ -48,10 +48,10 @@ const Buku = () => {
             {!loading && !error && items.map((item) => (
               <a
                 key={item.id}
-                href={item.file_url ? `http://localhost:3001${item.file_url}` : '#'}
+                href={item.whatsapp_number ? `https://wa.me/${item.whatsapp_number}` : '#'}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:border-rise-green/30 transition-all"
+                className={`group flex flex-col bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transition-all ${item.whatsapp_number ? 'hover:shadow-lg hover:border-rise-green/30' : 'cursor-default'}`}
               >
                 <div
                   className="aspect-4/3 bg-cover bg-center"

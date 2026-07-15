@@ -8,26 +8,32 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (!token) { setLoading(false); return; }
+    // The cookie is sent automatically. If it's valid, /me will return the admin data.
     api.get('/auth/me')
       .then(res => setAdmin(res.data.data))
-      .catch(() => localStorage.removeItem('token'))
+      .catch(() => {
+        // No need to remove token, the cookie is invalid or not there.
+        setAdmin(null);
+      })
       .finally(() => setLoading(false));
   }, []);
 
   const login = async (email, password) => {
     const res = await api.post('/auth/login', { email, password });
-    localStorage.setItem('token', res.data.data.token);
-    localStorage.setItem('admin', JSON.stringify(res.data.data.admin));
+    // The cookie is set by the server. We just need to set the admin state.
     setAdmin(res.data.data.admin);
     return res.data;
   };
 
-  const logout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('admin');
-    setAdmin(null);
+  const logout = async () => {
+    try {
+      await api.post('/auth/logout');
+    } catch (error) {
+      console.error("Logout failed", error);
+    } finally {
+      // Always clear user state on the client, even if the server call fails
+      setAdmin(null);
+    }
   };
 
   return (
