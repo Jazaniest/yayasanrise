@@ -2,17 +2,19 @@ import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const ResearchDevelopment = () => {
+  const { t } = useTranslation();
   const fokus = [
-    "Penelitian lingkungan dan sosial",
-    "Kajian perubahan iklim",
-    "Restorasi gambut dan ekosistem",
-    "Analisis konflik agraria",
-    "Kajian ekonomi hijau",
-    "Riset energi terbarukan masyarakat",
-    "Pengembangan teknologi tepat guna",
-    "Pemetaan partisipatif dan data spasial",
+    t("researchDevelopment.focusItems.0"),
+    t("researchDevelopment.focusItems.1"),
+    t("researchDevelopment.focusItems.2"),
+    t("researchDevelopment.focusItems.3"),
+    t("researchDevelopment.focusItems.4"),
+    t("researchDevelopment.focusItems.5"),
+    t("researchDevelopment.focusItems.6"),
+    t("researchDevelopment.focusItems.7"),
   ];
 
   return (
@@ -30,25 +32,21 @@ const ResearchDevelopment = () => {
         </header>
         <main className="rise-main">
           <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">
-            Research & Development
+            {t("researchDevelopment.title")}
           </h1>
           <p className="text-center text-gray-600 max-w-2xl mb-8 leading-relaxed font-light">
-            Pusat penelitian, pengembangan inovasi, dan produksi pengetahuan Yayasan RISE.
-            Menghasilkan riset aplikatif yang mendukung kebijakan berkelanjutan dan pengambilan
-            keputusan berbasis ilmu pengetahuan.
+            {t("researchDevelopment.description")}
           </p>
 
           <div className="rise-card space-y-6">
-            <h2 className="rise-section-title">Fokus Kegiatan</h2>
+            <h2 className="rise-section-title">{t("researchDevelopment.focusTitle")}</h2>
             <div className="flex flex-wrap gap-2">
               {fokus.map((item) => (
                 <span key={item} className="rise-chip">{item}</span>
               ))}
             </div>
             <p className="text-gray-700 leading-relaxed text-justify text-sm md:text-base">
-              Kegiatan mencakup kajian lingkungan, sosial, ekonomi hijau, perubahan iklim,
-              restorasi ekosistem, serta pengembangan solusi berbasis data dan kebutuhan
-              masyarakat di wilayah Riau dan Indonesia.
+              {t("researchDevelopment.focusDescription")}
             </p>
           </div>
         </main>

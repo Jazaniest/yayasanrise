@@ -1,0 +1,34 @@
+{
+  "welcomeMessage": "Welcome to the Rise Foundation",
+  "home": "Home",
+  "about": "About Us",
+  "programs": "Work Programs",
+  "contact": "Contact",
+  "ecologicalConflict": {
+    "title": "Ecological Conflict Resolution",
+    "description": "Dialogical, inclusive, and just resolution of social and ecological conflicts through assistance, multi-party facilitation, and strengthening community rights.",
+    "focusTitle": "Focus of Activities",
+    "fokus": {
+      "conflictSDA": "Natural resource conflicts",
+      "conflictEnergy": "Energy and land governance conflicts",
+      "communityAssistance": "Assistance for communities affected by extractive industries",
+      "energyTransitionDialogue": "Just energy transition dialogue"
+    },
+    "approachDescription": "Conflict resolution approach based on sustainability and socio-ecological justice, connecting policy advocacy with community needs on the ground."
+  },
+  "environmentalEducation": {
+    "title": "Environmental Education",
+    "description": "Increasing public awareness and environmental literacy through education, campaigns, training, and information dissemination for sustainable behavior change.",
+    "educationTheme": {
+      "title": "Education Theme",
+      "themes": {
+        "climateChange": "Climate change",
+        "peatAndEcosystems": "Peat and ecosystems",
+        "wasteManagement": "Waste management",
+        "renewableEnergy": "Renewable energy",
+        "lowCarbonLifestyle": "Low-carbon lifestyle",
+        "greenEconomy": "Green economy"
+      }
+    }
+  }
+}

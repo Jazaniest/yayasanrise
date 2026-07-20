@@ -2,15 +2,17 @@ import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const EnvironmentalEducation = () => {
+  const { t } = useTranslation();
   const tema = [
-    "Perubahan iklim",
-    "Gambut dan ekosistem",
-    "Pengelolaan sampah",
-    "Energi terbarukan",
-    "Gaya hidup rendah karbon",
-    "Ekonomi hijau",
+    "environmentalEducation.educationTheme.themes.climateChange",
+    "environmentalEducation.educationTheme.themes.peatAndEcosystems",
+    "environmentalEducation.educationTheme.themes.wasteManagement",
+    "environmentalEducation.educationTheme.themes.renewableEnergy",
+    "environmentalEducation.educationTheme.themes.lowCarbonLifestyle",
+    "environmentalEducation.educationTheme.themes.greenEconomy",
   ];
 
   return (
@@ -28,23 +30,22 @@ const EnvironmentalEducation = () => {
         </header>
         <main className="rise-main">
           <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">
-            Environmental Education
+            {t("environmentalEducation.title")}
           </h1>
           <p className="text-center text-gray-600 max-w-2xl mb-8 leading-relaxed font-light">
-            Meningkatkan kesadaran publik dan literasi lingkungan melalui pendidikan, kampanye,
-            pelatihan, dan penyebarluasan informasi untuk perubahan perilaku berkelanjutan.
+            {t("environmentalEducation.description")}
           </p>
 
           <div className="rise-card">
-            <h2 className="rise-section-title">Tema Edukasi</h2>
+            <h2 className="rise-section-title">{t("environmentalEducation.educationTheme.title")}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {tema.map((t) => (
+              {tema.map((tKey) => (
                 <div
-                  key={t}
+                  key={tKey}
                   className="flex items-center gap-3 p-4 rounded-xl bg-linear-to-r from-emerald-50/80 to-white border border-emerald-100/50"
                 >
                   <span className="w-2 h-2 rounded-full bg-rise-green shrink-0" />
-                  <span className="text-gray-700 text-sm md:text-base">{t}</span>
+                  <span className="text-gray-700 text-sm md:text-base">{t(tKey)}</span>
                 </div>
               ))}
             </div>

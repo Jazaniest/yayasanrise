@@ -1,5 +1,4 @@
 import {
-  BrowserRouter,
   Routes,
   Route,
   Navigate,
@@ -48,8 +47,7 @@ export default function App() {
     <>
       {isLoading && <LoadingScreen onFinished={() => setIsLoading(false)} />}
 
-      <BrowserRouter>
-        <div className="flex flex-col min-h-screen">
+              <div className="flex flex-col min-h-screen">
           <div className="grow">
             <Routes>
               <Route path="/" element={<Navigate to="/home" />} />
@@ -100,7 +98,6 @@ export default function App() {
           </div>
           <Footer />
         </div>
-      </BrowserRouter>
-    </>
+          </>
   );
 }

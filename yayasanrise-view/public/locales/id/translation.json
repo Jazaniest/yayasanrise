@@ -1,0 +1,38 @@
+{
+  "welcomeMessage": "Selamat Datang di Yayasan Rise",
+  "home": "Beranda",
+  "about": "Tentang Kami",
+  "programs": "Program Kerja",
+  "contact": "Kontak",
+  "environmentalEducation": {
+    "title": "Pendidikan Lingkungan",
+    "description": "Meningkatkan kesadaran publik dan literasi lingkungan melalui pendidikan, kampanye, pelatihan, dan penyebarluasan informasi untuk perubahan perilaku berkelanjutan.",
+    "educationTheme": {
+      "title": "Tema Edukasi",
+      "themes": {
+        "climateChange": "Perubahan iklim",
+        "peatAndEcosystems": "Gambut dan ekosistem",
+        "wasteManagement": "Pengelolaan sampah",
+        "renewableEnergy": "Energi terbarukan",
+        "lowCarbonLifestyle": "Gaya hidup rendah karbon",
+        "greenEconomy": "Ekonomi hijau"
+      }
+    }
+  },
+  "researchDevelopment": {
+    "title": "Riset & Pengembangan",
+    "description": "Pusat penelitian, pengembangan inovasi, dan produksi pengetahuan Yayasan RISE. Menghasilkan riset aplikatif yang mendukung kebijakan berkelanjutan dan pengambilan keputusan berbasis ilmu pengetahuan.",
+    "focusTitle": "Fokus Kegiatan",
+    "focusItems": [
+      "Penelitian lingkungan dan sosial",
+      "Kajian perubahan iklim",
+      "Restorasi gambut dan ekosistem",
+      "Analisis konflik agraria",
+      "Kajian ekonomi hijau",
+      "Riset energi terbarukan masyarakat",
+      "Pengembangan teknologi tepat guna",
+      "Pemetaan partisipatif dan data spasial"
+    ],
+    "focusDescription": "Kegiatan mencakup kajian lingkungan, sosial, ekonomi hijau, perubahan iklim, restorasi ekosistem, serta pengembangan solusi berbasis data dan kebutuhan masyarakat di wilayah Riau dan Indonesia."
+  }
+}

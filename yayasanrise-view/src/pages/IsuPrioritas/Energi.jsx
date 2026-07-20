@@ -2,14 +2,11 @@ import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Energi = () => {
-  const fokus = [
-    "Transisi energi terbarukan berkeadilan",
-    "Riset potensi biomassa dan energi alternatif desa",
-    "Dialog kebijakan energi berkelanjutan",
-    "Penguatan energi masyarakat di wilayah terpencil",
-  ];
+  const { t } = useTranslation();
+  const fokus = t("energi.focus", { returnObjects: true });
 
   return (
     <div className="relative min-h-screen w-full font-sans bg-slate-50">
@@ -25,13 +22,12 @@ const Energi = () => {
           <div className="hidden md:block w-12" /> {/* This is the placeholder for centering */}
         </header>
         <main className="rise-main">
-          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">Energi</h1>
+          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">{t("energi.title")}</h1>
           <p className="text-center text-gray-600 max-w-2xl mb-8 font-light leading-relaxed">
-            Mendorong transisi menuju energi bersih dan terbarukan yang adil bagi masyarakat,
-            sekaligus mengurangi ketergantungan pada sumber energi yang merusak ekosistem.
+            {t("energi.description")}
           </p>
           <div className="rise-card">
-            <h2 className="rise-section-title">Prioritas Kerja</h2>
+            <h2 className="rise-section-title">{t("energi.workPriority")}</h2>
             <div className="flex flex-wrap gap-2">
               {fokus.map((f) => <span key={f} className="rise-chip">{f}</span>)}
             </div>

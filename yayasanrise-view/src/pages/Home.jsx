@@ -1,8 +1,10 @@
+import { useTranslation } from "react-i18next";
 import Navbar from "../components/Navbar";
 const BG_URL = '/assets/forest-bg.jpg';
 const LOGO_URL = '/assets/logo.png';
 
 const Home = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen w-full flex flex-col">
       <div className="relative grow">
@@ -30,10 +32,10 @@ const Home = () => {
             {/* Judul Yayasan */}
             <div className="text-center md:text-left border-white/20">
               <h1 className="text-4xl md:text-6xl font-extralight tracking-tighter leading-none">
-                Yayasan RISE
+                {t('yayasanRise')}
               </h1>
               <h2 className="text-2xl md:text-4xl font-normal tracking-normal mt-2">
-                Sosial Ekologis Indonesia
+                {t('sosialEkologisIndonesia')}
               </h2>
             </div>
           </div>
@@ -41,7 +43,7 @@ const Home = () => {
           {/* Tagline / Deskripsi */}
           <div className="w-full max-w-3xl border-t border-white/30 pt-6">
             <p className="text-center text-sm md:text-lg font-light tracking-[0.3em] uppercase italic opacity-90 leading-relaxed">
-              Membangun Masa Depan Sosial dan Ekologi yang Adil, Berkelanjutan, dan Berbasis Pengetahuan.
+              {t('tagline')}
             </p>
           </div>
         </main>

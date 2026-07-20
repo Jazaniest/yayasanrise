@@ -1,14 +1,16 @@
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
+import { useTranslation } from "react-i18next";
 const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
 
 const EcologicalConflict = () => {
+  const { t } = useTranslation();
   const fokus = [
-    "Konflik sumber daya alam",
-    "Konflik tata kelola energi dan lahan",
-    "Pendampingan masyarakat terdampak industri ekstraktif",
-    "Dialog transisi energi berkeadilan",
+    t("ecologicalConflict.fokus.conflictSDA"),
+    t("ecologicalConflict.fokus.conflictEnergy"),
+    t("ecologicalConflict.fokus.communityAssistance"),
+    t("ecologicalConflict.fokus.energyTransitionDialogue"),
   ];
 
   return (
@@ -26,15 +28,14 @@ const EcologicalConflict = () => {
         </header>
         <main className="rise-main">
           <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">
-            Ecological Conflict Resolution
+            {t("ecologicalConflict.title")}
           </h1>
           <p className="text-center text-gray-600 max-w-2xl mb-8 leading-relaxed font-light">
-            Penyelesaian konflik sosial dan ekologis secara dialogis, inklusif, dan berkeadilan
-            melalui pendampingan, fasilitasi multipihak, dan penguatan hak masyarakat.
+            {t("ecologicalConflict.description")}
           </p>
 
           <div className="rise-card space-y-6">
-            <h2 className="rise-section-title">Fokus Kegiatan</h2>
+            <h2 className="rise-section-title">{t("ecologicalConflict.focusTitle")}</h2>
             <ul className="space-y-4">
               {fokus.map((item) => (
                 <li key={item} className="flex gap-3 p-4 rounded-xl bg-emerald-50/50 border border-emerald-100/60 text-gray-700 text-sm md:text-base">
@@ -44,8 +45,7 @@ const EcologicalConflict = () => {
               ))}
             </ul>
             <p className="text-gray-600 text-sm leading-relaxed border-t border-emerald-100 pt-4">
-              Pendekatan resolusi konflik berbasis keberlanjutan dan keadilan sosial-ekologis,
-              menghubungkan advokasi kebijakan dengan kebutuhan masyarakat di lapangan.
+              {t("ecologicalConflict.approachDescription")}
             </p>
           </div>
         </main>
