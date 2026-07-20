@@ -11,6 +11,7 @@ import kontenRoutes from './routes/konten.js';
 import dashboardRoutes from './routes/dashboard.js';
 import uploadRoutes from './routes/upload.js';
 import superadminRoutes from './routes/superadmin.route.js';
+import analyticsRoutes from './routes/analytics.route.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -38,9 +39,10 @@ app.use('/api/v1', kontenRoutes);
 app.use('/api/v1/dashboard', dashboardRoutes);
 app.use('/api/v1/upload', uploadRoutes);
 app.use('/api/v1/superadmin', superadminRoutes);
+app.use('/api/v1/analytics', analyticsRoutes);
 
 // Global error handler
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(err.status || 500).json({
     success: false,
