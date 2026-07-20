@@ -56,12 +56,12 @@ export default function MitraForm() {
   if (loading) return <p className="text-gray-500">Loading...</p>;
 
   return (
-    <div className="max-w-2xl">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">
+    <div className="max-w-2xl mx-auto p-4 md:p-6">
+      <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">
         {isEdit ? 'Edit Mitra' : 'Tambah Mitra'}
       </h2>
 
-      <form onSubmit={handleSubmit} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 space-y-4">
+      <form onSubmit={handleSubmit} className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 md:p-6 space-y-4">
         <FormField label="Nama" name="nama" value={form.nama} onChange={handleChange} required />
         <FormField label="Tipe" name="tipe" type="select" value={form.tipe} onChange={handleChange} options={['donatur', 'kolaborator', 'sponsor']} />
         <FormField label="Website" name="website" value={form.website} onChange={handleChange} />
@@ -71,11 +71,11 @@ export default function MitraForm() {
         {form.logo_url && !file && <p className="text-sm text-gray-500">Logo saat ini: <a href={form.logo_url} target="_blank" rel="noopener noreferrer"><img src={form.logo_url} alt="logo mitra" className="w-32 h-auto mt-2"/></a></p>}
         <FormField label="Status" name="status" type="select" value={form.status} onChange={handleChange} options={['draft', 'published']} />
 
-        <div className="flex gap-3 pt-2">
+        <div className="flex flex-col sm:flex-row gap-3 pt-2">
           <button type="submit" disabled={saving} className="bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition disabled:opacity-50">
             {saving ? 'Menyimpan...' : 'Simpan'}
           </button>
-          <button type="button" onClick={() => navigate('/mitra')} className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-2.5 rounded-lg text-sm font-medium transition">
+          <button type="button" onClick={() => navigate('/mitra')} className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-2.5 rounded-lg text-sm font-medium transition text-center">
             Batal
           </button>
         </div>

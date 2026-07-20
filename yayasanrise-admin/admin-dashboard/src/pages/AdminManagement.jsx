@@ -54,70 +54,75 @@ const AdminManagement = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Admin Management</h1>
+    <div className="container mx-auto p-4 md:p-6 max-w-5xl">
+      <div className="mb-8">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-800">Admin Management</h1>
+        <p className="text-gray-500 mt-2">Manage your administrative team and their access levels.</p>
+      </div>
 
-      <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-        <h2 className="text-xl font-semibold mb-4">Create New Admin</h2>
-        <form onSubmit={handleCreateAdmin} className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+      <div className="bg-white p-5 md:p-8 rounded-2xl shadow-sm border border-gray-100 mb-8">
+        <h2 className="text-lg md:text-xl font-semibold mb-6 text-gray-800">Create New Admin</h2>
+        <form onSubmit={handleCreateAdmin} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700">Name</label>
-            <input type="text" value={newName} onChange={(e) => setNewName(e.target.value)} required className="mt-1 block w-full border-gray-300 rounded-md shadow-sm" />
+            <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+            <input type="text" value={newName} onChange={(e) => setNewName(e.target.value)} required className="w-full border-gray-200 rounded-lg shadow-sm border p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Email</label>
-            <input type="email" value={newEmail} onChange={(e) => setNewEmail(e.target.value)} required className="mt-1 block w-full border-gray-300 rounded-md shadow-sm" />
+            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input type="email" value={newEmail} onChange={(e) => setNewEmail(e.target.value)} required className="w-full border-gray-200 rounded-lg shadow-sm border p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Password</label>
-            <input type="password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required className="mt-1 block w-full border-gray-300 rounded-md shadow-sm" />
+            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <input type="password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required className="w-full border-gray-200 rounded-lg shadow-sm border p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition" />
           </div>
           <div>
-             <label className="block text-sm font-medium text-gray-700">Role</label>
-             <select value={newRole} onChange={(e) => setNewRole(e.target.value)} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+             <label className="block text-sm font-medium text-gray-700 mb-1">Role</label>
+             <select value={newRole} onChange={(e) => setNewRole(e.target.value)} className="w-full border-gray-200 rounded-lg shadow-sm border p-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition">
                 <option value="admin">Admin</option>
                 <option value="superadmin">Super Admin</option>
              </select>
           </div>
-          <div className="md:col-span-4">
-            <button type="submit" className="bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-700">Create Admin</button>
+          <div className="md:col-span-2">
+            <button type="submit" className="w-full bg-emerald-600 text-white font-medium py-3 rounded-lg hover:bg-emerald-700 transition">Create Admin</button>
           </div>
         </form>
       </div>
 
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-xl font-semibold mb-4">Admin List</h2>
-        {loading && <p>Loading...</p>}
+      <div className="bg-white p-5 md:p-8 rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <h2 className="text-lg md:text-xl font-semibold mb-6 text-gray-800">Admin List</h2>
+        {loading && <p className="text-gray-500">Loading...</p>}
         {error && <p className="text-red-500">{error}</p>}
         {!loading && !error && (
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
-                <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-              </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
-              {admins.map((admin) => (
-                <tr key={admin.id}>
-                  <td className="px-6 py-4 whitespace-nowrap">{admin.name}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">{admin.email}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                        admin.role === 'superadmin' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'
-                    }`}>
-                        {admin.role}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                    <button onClick={() => handleDeleteAdmin(admin.id)} className="text-red-600 hover:text-red-900">Delete</button>
-                  </td>
+          <div className="overflow-x-auto">
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Name</th>
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Email</th>
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Role</th>
+                  <th className="px-6 py-4 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">Actions</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-200">
+                {admins.map((admin) => (
+                  <tr key={admin.id} className="hover:bg-gray-50 transition">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{admin.name}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">{admin.email}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm">
+                      <span className={`px-3 py-1 inline-flex text-xs leading-5 font-medium rounded-full ${
+                          admin.role === 'superadmin' ? 'bg-red-50 text-red-700 border border-red-100' : 'bg-emerald-50 text-emerald-700 border border-emerald-100'
+                      }`}>
+                          {admin.role}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                      <button onClick={() => handleDeleteAdmin(admin.id)} className="text-red-600 hover:text-red-900 transition">Delete</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
       </div>
     </div>

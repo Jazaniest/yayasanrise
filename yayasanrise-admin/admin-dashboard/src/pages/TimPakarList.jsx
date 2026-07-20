@@ -37,10 +37,10 @@ export default function TimPakarList() {
   };
 
   return (
-    <div>
-      <div className="flex items-center justify-between mb-6">
+    <div className="p-4 md:p-6">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
         <h2 className="text-2xl font-bold text-gray-800">Tim Pakar</h2>
-        <button onClick={() => navigate('/tim-pakar/new')} className="bg-emerald-700 hover:bg-emerald-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition">
+        <button onClick={() => navigate('/tim-pakar/new')} className="bg-emerald-700 hover:bg-emerald-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition w-full md:w-auto text-center">
           + Tambah Anggota Tim
         </button>
       </div>
@@ -48,13 +48,15 @@ export default function TimPakarList() {
       {loading ? (
         <p className="text-gray-500">Loading...</p>
       ) : (
-        <DataTable
-          columns={COLUMNS}
-          data={data}
-          onEdit={(id) => navigate(`/tim-pakar/${id}`)}
-          onDelete={handleDelete}
-          onToggleStatus={handleToggleStatus}
-        />
+        <div className="overflow-x-auto">
+          <DataTable
+            columns={COLUMNS}
+            data={data}
+            onEdit={(id) => navigate(`/tim-pakar/${id}`)}
+            onDelete={handleDelete}
+            onToggleStatus={handleToggleStatus}
+          />
+        </div>
       )}
     </div>
   );

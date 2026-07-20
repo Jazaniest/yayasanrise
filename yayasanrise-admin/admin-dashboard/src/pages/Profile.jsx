@@ -42,10 +42,10 @@ const Profile = () => {
   };
 
   return (
-    <div className="max-w-md">
+    <div className="w-full max-w-lg mx-auto p-4 md:p-6">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">My Profile</h2>
       {message && <p className="mb-4 text-sm text-gray-600">{message}</p>}
-      <form onSubmit={handleSubmit} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 space-y-4">
+      <form onSubmit={handleSubmit} className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 md:p-6 space-y-4 overflow-x-auto">
         <div>
           <label className="block text-sm font-medium text-gray-700">Name</label>
           <input type="text" name="name" value={formData.name} onChange={handleChange} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required />
@@ -59,7 +59,7 @@ const Profile = () => {
           <input type="password" name="password" value={formData.password} onChange={handleChange} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="Leave blank to keep current password" />
         </div>
         <div className="pt-2">
-          <button type="submit" className="bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition">
+          <button type="submit" className="w-full md:w-auto bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition">
             Update Profile
           </button>
         </div>

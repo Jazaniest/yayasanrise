@@ -29,14 +29,23 @@ const menuGroups = [
   },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, onClose }) {
   const { admin } = useAuth();
 
   return (
-    <aside className="w-64 bg-white border-r border-gray-200 min-h-screen flex flex-col">
-      <div className="p-5 border-b border-gray-100">
-        <h2 className="text-lg font-bold text-emerald-800">Yayasan RISE</h2>
-        <p className="text-xs text-gray-400 mt-0.5">Admin Panel</p>
+    <aside
+      className={`fixed inset-y-0 left-0 z-30 w-64 bg-white border-r border-gray-200 transform transition-transform duration-300 ease-in-out md:translate-x-0 md:static ${
+        isOpen ? 'translate-x-0' : '-translate-x-full'
+      }`}
+    >
+      <div className="p-5 border-b border-gray-100 flex justify-between items-center">
+        <div>
+          <h2 className="text-lg font-bold text-emerald-800">Yayasan RISE</h2>
+          <p className="text-xs text-gray-400 mt-0.5">Admin Panel</p>
+        </div>
+        <button className="md:hidden text-gray-500" onClick={onClose}>
+          ✕
+        </button>
       </div>
       <nav className="flex-1 overflow-y-auto p-3 space-y-6">
         {menuGroups.map((group) => (
@@ -49,6 +58,7 @@ export default function Sidebar() {
                 <NavLink
                   key={item.path}
                   to={item.path}
+                  onClick={onClose}
                   className={({ isActive }) =>
                     `flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition ${
                       isActive
@@ -73,6 +83,7 @@ export default function Sidebar() {
             <div className="space-y-1">
               <NavLink
                 to="/admin-management"
+                onClick={onClose}
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition ${
                     isActive
