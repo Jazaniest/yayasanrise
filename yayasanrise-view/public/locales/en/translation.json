@@ -4,6 +4,27 @@
   "about": "About Us",
   "programs": "Work Programs",
   "contact": "Contact",
+  "home": {
+    "label": "Home",
+    "tagline1": "Indonesian Socio-Ecological",
+    "tagline2": "Building a Just, Sustainable, and Knowledge-Based Social and Ecological Future."
+  },
+  "footer": {
+    "identity": {
+      "title": "RISE Foundation",
+      "location": "Pekanbaru, Riau, Indonesia",
+      "contactPage": "Contact page"
+    },
+    "support": {
+      "title": "Support the Movement:",
+      "links": {
+        "donate": "Donation",
+        "collaborate": "Collaboration",
+        "sponsorship": "Sponsorship"
+      }
+    },
+    "copyright": "© {{year}} RISE Foundation. All rights reserved."
+  },
   "ecologicalConflict": {
     "title": "Ecological Conflict Resolution",
     "description": "Dialogical, inclusive, and just resolution of social and ecological conflicts through assistance, multi-party facilitation, and strengthening community rights.",
@@ -20,7 +41,7 @@
     "title": "Environmental Education",
     "description": "Increasing public awareness and environmental literacy through education, campaigns, training, and information dissemination for sustainable behavior change.",
     "educationTheme": {
-      "title": "Education Theme",
+      "title": "Education Themes",
       "themes": {
         "climateChange": "Climate change",
         "peatAndEcosystems": "Peat and ecosystems",
@@ -30,5 +51,153 @@
         "greenEconomy": "Green economy"
       }
     }
-  }
+  },
+  "researchDevelopment": {
+    "title": "Research & Development",
+    "description": "RISE Foundation's center for research, innovation development, and knowledge production. Producing applied research that supports sustainable policies and science-based decision-making.",
+    "focusTitle": "Focus of Activities",
+    "focusItems": [
+      "Environmental and social research",
+      "Climate change studies",
+      "Peat and ecosystem restoration",
+      "Agrarian conflict analysis",
+      "Green economy studies",
+      "Community renewable energy research",
+      "Appropriate technology development",
+      "Participatory mapping and spatial data"
+    ],
+    "focusDescription": "Activities include studies on the environment, society, green economy, climate change, ecosystem restoration, and the development of solutions based on data and community needs in Riau and Indonesia."
+  },
+  "riauSocioEco": {
+    "title": "Riau Socio-Ecological Data Center",
+    "description": "Center for collection, processing, analysis, and provision of socio-ecological data in Riau to support research, policy advocacy, and public information transparency.",
+    "ecologicalData": { "title": "Ecological Data", "items": ["Peat", "Mangrove", "Land cover", "Forest fires", "Carbon emissions"] },
+    "socialData": { "title": "Social Data", "items": ["Agrarian conflict", "Mentored villages", "Customary areas", "Community vulnerability"] },
+    "energyClimate": { "title": "Energy & Climate", "items": ["Biomass potential", "Village alternative energy", "Carbon footprint", "Energy transition data", "Energy crisis prone areas"] },
+    "output": { "title": "Output Format", "subtitle": "Continuous development — some are still in the preparation stage.", "items": ["Data dashboard", "Interactive map", "Infographics", "Socio-ecological atlas", "Riau renewable energy database"] }
+  },
+  "visitorStats": {
+    "title": "Visitor Statistics",
+    "heroTitle": "Visitor Statistics",
+    "totalVisitors": "Total Visitors",
+    "topRegion": "Top Region",
+    "showAll": "Show All",
+    "showLess": "Show Less",
+    "country": "Country",
+    "visitors": "Visitors",
+    "errorLoad": "Failed to load visitor stats.",
+    "countries": {
+      "indonesia": "Indonesia",
+      "norway": "Norway",
+      "germany": "Germany",
+      "finland": "Finland",
+      "sweden": "Sweden",
+      "denmark": "Denmark",
+      "netherlands": "Netherlands",
+      "unitedkingdom": "United Kingdom",
+      "switzerland": "Switzerland",
+      "australia": "Australia",
+      "japan": "Japan",
+      "singapore": "Singapore",
+      "canada": "Canada",
+      "newzealand": "New Zealand",
+      "brazil": "Brazil",
+      "other": "Other"
+    }
+  },
+  "loading": { "message": "Loading..." },
+  "energi": {
+    "title": "Energy",
+    "description": "Promoting a just transition to clean and renewable energy for communities, while reducing dependence on ecosystem-damaging energy sources.",
+    "workPriority": "Work Priority",
+    "focus": [
+        "Just renewable energy transition",
+        "Research on biomass potential and alternative village energy",
+        "Sustainable energy policy dialogue",
+        "Community energy strengthening in remote areas"
+    ]
+  },
+  "gambut": {
+    "title": "Peat",
+    "description": "Peat ecosystems are a strategic priority for RISE due to their critical role in climate regulation, biodiversity, and community livelihoods in Riau. We focus on research, restoration, and sustainable peatland governance.",
+    "fokusGambutTitle": "Peat Program Focus",
+    "fokusGambut": [
+        "Restoration and rewetting of degraded peatlands",
+        "Research on peat carbon emissions and governance",
+        "Development of paludiculture and alternative economies",
+        "Advocacy for peat ecosystem protection policies"
+    ]
+  },
+  "ketahananPangan": {
+    "title": "Food Security",
+    "description": "Strengthening the community's ability to meet food needs independently, healthily, and sustainably through environmentally friendly agricultural practices.",
+    "strategyTitle": "Strategy",
+    "fokus": {
+      "kedaulatanPangan": "Local food sovereignty",
+      "pertanianEkologis": "Ecological and organic farming",
+      "kebunPangan": "Community food gardens",
+      "penguatanRantai": "Strengthening fair food supply chains"
+    }
+  },
+  "konflikAgraria": {
+    "title": "Agrarian Conflict",
+    "description": "Agrarian conflicts and land governance are crucial issues in Riau. RISE supports just resolutions through advocacy, research, and dialogue based on community rights.",
+    "fokus": {
+        "item1": "Advocacy for land rights and customary territories",
+        "item2": "Assistance for communities affected by land conflicts",
+        "item3": "Facilitation of multi-stakeholder dialogue",
+        "item4": "Study of natural resource conflicts and spatial planning"
+    }
+  },
+  "mangrove": {
+      "title": "Mangrove",
+      "description": "Mangrove is a strategic coastal ecosystem that plays an important role in climate change mitigation, coastline protection, and the sustainability of the socio-economic life of coastal communities. In the Riau region, mangrove ecosystems face pressure from land conversion, abrasion, and environmental degradation, thus requiring sustainable management and restoration.",
+      "fokusProgram": {
+          "chip": "Focus Program",
+          "title": "Mangrove Ecosystem",
+          "description": "RISE develops various research initiatives, assistance, and strengthening of socio-ecological data related to mangrove ecosystems as part of efforts to build environmental and economic resilience for coastal communities in a sustainable manner.",
+          "list": {
+              "restorasi": "Mangrove restoration and rehabilitation",
+              "pemetaan": "Mapping of Riau's mangrove cover",
+              "penguatan": "Strengthening of mangrove-based livelihoods",
+              "integrasi": "Integration of mangrove data into the RISE data center"
+          }
+      }
+  },
+  "sampah": {
+    "title": "Waste",
+    "description": "Tackling the waste problem through a circular economy approach, community-based management, and behavior change campaigns to reduce plastic waste on land and at sea.",
+    "fokus": [
+        "Community waste banks and recycling",
+        "Education on plastic waste reduction",
+        "Study of waste generation and management policies",
+        "Innovation of products from recycled materials"
+    ]
+  },
+  "artikelIlmiah": { "title": "Scientific Articles", "description": "Scientific publications from research on environment, social issues, and sustainable policies.", "loading": "Loading...", "view": "View" },
+  "infografisData": { "failedToLoad": "Failed to load infographic data.", "title": "Data Infographics", "subtitle": "Socio-ecological data visualization from the Riau Socio-Ecological Data Center.", "loading": "Loading..." },
+  "laporanPenelitian": { "title": "Research Reports", "description": "Complete reports of field studies, data analysis, and strategic findings.", "loading": "Loading...", "errorLoad": "Failed to load research report data. {{message}}", "download": "Download", "soon": "Soon" },
+  "policyBrief": { "title": "Policy Briefs", "description": "Evidence-based policy summaries for decision-makers and stakeholders.", "loading": "Loading...", "error": "Failed to load policy brief data.", "download": "Download", "soon": "Soon" },
+  "buku": { "pageTitle": "Books & Modules", "pageDescription": "Guidebooks and training modules for environmental education and empowerment.", "loading": "Loading...", "errorLoad": "Failed to load book data." },
+  "dampak": { "title": "Our Impact", "description": "This page showcases the tangible impacts of our programs on communities and ecosystems. We present our achievements through data, stories, and visual evidence to ensure transparency and accountability." },
+  "insight": { "errorLoad": "Failed to load insight & opinion data.", "title": "Insights & Opinions", "description": "Discourse, analysis, and expert opinions from the RISE Foundation on current socio-ecological issues.", "loading": "Loading...", "cta": "Full articles will be published periodically. Also visit", "ctaLink": "Publications & Research" },
+  "ekonomiHijau": { "title": "Green Economy", "description": "Promoting community-based economic development models that are environmentally friendly, sustainable, and capable of improving local welfare." },
+  "isuPrioritas": { "title": "Priority Issues", "description": "Eight strategic issues that are the focus of advocacy, research, and field action for the RISE Foundation in Riau and Indonesia.", "issueNumber": "Issue {{number}}", "seeDetails": "See details" },
+  "perubahanIklim": { "title": "Climate Change", "description": "The climate crisis demands knowledge-based adaptation and mitigation actions, as well as community participation in vulnerable areas, including Riau as an important peatland and forestry landscape.", "priorityArea": { "title": "Priority Area", "items": ["Climate change adaptation and mitigation", "Emission studies and climate policy", "Community resilience to climate impacts", "Low-carbon transition at the local level"] } },
+  "kegiatan": { "title": "Activities", "description": "Explore our ongoing and past activities, from community workshops to national-level policy dialogues. This section provides insight into our hands-on work." },
+  "mitra": { "title": "Our Partners & Collaborations", "subtitle": "Strategic collaboration with partner institutions strengthens the impact of socio-ecological programs in Riau.", "loading": "Loading...", "error": { "loadFailed": "Failed to load partner data." }, "group": { "donors": "Donors", "collaborators": "Collaborators", "sponsors": "Sponsors" } },
+  "communityEmpowerment": { "title": "Community Empowerment", "description": "Strengthening community capacity through participatory and sustainable approaches to enhance economic, food, energy, and environmental resilience of local communities.", "focusTitle": "Program Focus", "focusItems": { "foodSecurity": "Food Security", "wasteManagement": "Waste Management", "greenEconomy": "Green Economy & Renewable Energy" }, "activitiesTitle": "Forms of Activities", "activityItems": { "trainingAndMentoring": "Community training and mentoring", "sustainableGreenBusiness": "Development of sustainable green businesses", "communityInstitution": "Strengthening community institutions", "localFoodProgram": "Local food and ecological agriculture programs" } },
+  "programKerja": { "title": "Work Programs", "description": "Our work is structured into five main programs, each addressing a critical aspect of socio-ecological sustainability in Riau." },
+  "publikasiRiset": { "title": "Publications & Research", "description": "RISE Foundation's knowledge repository — from scientific articles to data infographics to support advocacy and sustainable policies.", "lihatDetail": "View details" },
+  "legalitas": { "title": "Legality", "pdfTitle": "RISE Foundation Legality Document", "noPdfSupport": "Your browser does not support PDF display.", "downloadLink": "Click here to download.", "downloadButton": "Download Legality Document" },
+  "nilaiPendekatan": { "breadcrumb": "← About Us", "title": "Values & Approach", "nilai": { "keadilan": { "title": "Socio-Ecological Justice", "desc": "Community rights and ecosystem health are treated equally in every intervention." }, "pengetahuan": { "title": "Knowledge-Based", "desc": "Decisions and advocacy are supported by applicable research, data, and scientific evidence." }, "partisipatif": { "title": "Participatory", "desc": "The community is actively involved from program planning to evaluation." }, "kolaboratif": { "title": "Collaborative", "desc": "Synergy with government partners, academics, CSOs, and the private sector." }, "transparan": { "title": "Transparent", "desc": "Information openness and accountability in program implementation." } }, "pendekatan": { "title": "Work Approach", "list": ["Integration of social, economic, and environmental perspectives (holistic approach)", "Combination of research, empowerment, education, and policy advocacy", "Long-term assistance based on local needs", "Utilization of spatial and participatory data for planning"] } },
+  "profil": { "title": "Profile", "description": { "paragraph1": "<strong>RISE Foundation (Social Ecological Indonesia)</strong> is a non-profit organization focused on the integration of social empowerment and environmental ecosystem preservation in Indonesia. We believe that human welfare cannot be separated from the health of the surrounding nature.", "paragraph2": "Founded with a spirit of collaboration, we run various programs ranging from environmental education, creative economy development based on sustainable natural resources, to ecological policy advocacy. Through a holistic approach, RISE is committed to being a bridge for the creation of harmony between social progress and the sustainability of the earth.", "paragraph3": "Our main focuses include critical land restoration, community waste management, and assisting indigenous communities in preserving local wisdom that supports nature conservation." } },
+  "struktur": { "judul": "Organizational Structure", "tombol": { "tutup": "Close", "lihatProfil": "View Profile" }, "posisi": { "pembina": "Advisor", "ketua": "Chairman", "sekretaris": "Secretary", "bendahara": "Treasurer", "pengawas": "Supervisor" }, "deskripsi": { "pembina": "M. Rawa El Amady...", "ketua": "Anto Ariyanto...", "sekretaris": "Istiqomah Marfuah...", "bendahara": "Responsible for...", "pengawas": "Born in Inderapura..." } },
+  "tentangKami": { "pageTitle": "About Us", "pageDescription": "Get to know the identity, values, legality, and team behind the RISE Social Ecological Indonesia Foundation.", "sub": "Sub", "lihatDetail": "View details" },
+  "timPakar": {
+    "title": "Team & Experts",
+    "description": "The synergy of a multidisciplinary professional team behind the RISE movement—from research to field assistance.",
+    "errorLoad": "Failed to load expert team data."
+  },
+  "visiMisi": { "title": "Vision & Mission", "visi": { "title": "Vision", "description": "To realize a just, sustainable, and knowledge-based future for Indonesia through harmony between social empowerment of the community and ecosystem preservation." }, "misi": { "title": "Mission", "items": ["To produce applicative research and knowledge in the fields of social, environmental, and sustainable policy.", "To empower communities through a participatory approach in food, energy, waste, and the green economy.", "To facilitate the resolution of socio-ecological conflicts in a dialogical and just manner.", "To enhance environmental literacy and public awareness towards a low-carbon lifestyle.", "To provide open socio-ecological data to support transparency and evidence-based policy."] } }
 }

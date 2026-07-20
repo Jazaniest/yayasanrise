@@ -4,6 +4,39 @@
   "about": "Tentang Kami",
   "programs": "Program Kerja",
   "contact": "Kontak",
+  "home": {
+    "label": "Beranda",
+    "tagline1": "Sosial Ekologis Indonesia",
+    "tagline2": "Membangun Masa Depan Sosial dan Ekologi yang Adil, Berkelanjutan, dan Berbasis Pengetahuan."
+  },
+  "footer": {
+    "identity": {
+      "title": "Yayasan RISE",
+      "location": "Pekanbaru, Riau, Indonesia",
+      "contactPage": "Halaman kontak"
+    },
+    "support": {
+      "title": "Dukung Gerakan:",
+      "links": {
+        "donate": "Donasi",
+        "collaborate": "Kolaborasi",
+        "sponsorship": "Sponsorship"
+      }
+    },
+    "copyright": "© {{year}} Yayasan RISE. Semua hak dilindungi undang-undang."
+  },
+  "ecologicalConflict": {
+    "title": "Resolusi Konflik Ekologis",
+    "description": "Penyelesaian konflik sosial dan ekologis secara dialogis, inklusif, dan berkeadilan melalui pendampingan, fasilitasi multipihak, dan penguatan hak masyarakat.",
+    "focusTitle": "Fokus Kegiatan",
+    "fokus": {
+      "conflictSDA": "Konflik sumber daya alam",
+      "conflictEnergy": "Konflik tata kelola energi dan lahan",
+      "communityAssistance": "Pendampingan masyarakat terdampak industri ekstraktif",
+      "energyTransitionDialogue": "Dialog transisi energi berkeadilan"
+    },
+    "approachDescription": "Pendekatan resolusi konflik berbasis keberlanjutan dan keadilan sosial-ekologis, menghubungkan advokasi kebijakan dengan kebutuhan masyarakat di lapangan."
+  },
   "environmentalEducation": {
     "title": "Pendidikan Lingkungan",
     "description": "Meningkatkan kesadaran publik dan literasi lingkungan melalui pendidikan, kampanye, pelatihan, dan penyebarluasan informasi untuk perubahan perilaku berkelanjutan.",
@@ -34,5 +67,137 @@
       "Pemetaan partisipatif dan data spasial"
     ],
     "focusDescription": "Kegiatan mencakup kajian lingkungan, sosial, ekonomi hijau, perubahan iklim, restorasi ekosistem, serta pengembangan solusi berbasis data dan kebutuhan masyarakat di wilayah Riau dan Indonesia."
-  }
+  },
+  "riauSocioEco": {
+    "title": "Pusat Data Sosial-Ekologis Riau",
+    "description": "Pusat pengumpulan, pengolahan, analisis, dan penyediaan data sosial-ekologis di Riau untuk mendukung riset, advokasi kebijakan, dan transparansi informasi publik.",
+    "ecologicalData": { "title": "Data Ekologis", "items": ["Gambut", "Mangrove", "Tutupan lahan", "Kebakaran hutan", "Emisi karbon"] },
+    "socialData": { "title": "Data Sosial", "items": ["Konflik agraria", "Desa dampingan", "Wilayah adat", "Kerentanan masyarakat"] },
+    "energyClimate": { "title": "Energi & Iklim", "items": ["Potensi biomassa", "Energi alternatif desa", "Jejak karbon", "Data transisi energi", "Daerah rawan krisis energi"] },
+    "output": { "title": "Format Keluaran", "subtitle": "Pengembangan berkelanjutan — beberapa masih dalam tahap persiapan.", "items": ["Dasbor data", "Peta interaktif", "Infografis", "Atlas sosial-ekologis", "Database energi terbarukan Riau"] }
+  },
+  "visitorStats": {
+    "title": "Statistik Pengunjung",
+    "heroTitle": "Statistik Pengunjung",
+    "totalVisitors": "Total Pengunjung",
+    "topRegion": "Wilayah Teratas",
+    "showAll": "Lihat Semua",
+    "showLess": "Sembunyikan",
+    "country": "Negara",
+    "visitors": "Pengunjung",
+    "errorLoad": "Gagal memuat statistik pengunjung.",
+    "countries": {
+      "indonesia": "Indonesia",
+      "norway": "Norwegia",
+      "germany": "Jerman",
+      "finland": "Finlandia",
+      "sweden": "Swedia",
+      "denmark": "Denmark",
+      "netherlands": "Belanda",
+      "unitedkingdom": "Britania Raya",
+      "switzerland": "Swiss",
+      "australia": "Australia",
+      "japan": "Jepang",
+      "singapore": "Singapura",
+      "canada": "Kanada",
+      "newzealand": "Selandia Baru",
+      "brazil": "Brasil",
+      "other": "Lainnya"
+    }
+  },
+  "loading": { "message": "Memuat..." },
+  "energi": {
+    "title": "Energi",
+    "description": "Mendorong transisi menuju energi bersih dan terbarukan yang adil bagi masyarakat, sekaligus mengurangi ketergantungan pada sumber energi yang merusak ekosistem.",
+    "workPriority": "Prioritas Kerja",
+    "focus": [
+        "Transisi energi terbarukan berkeadilan",
+        "Riset potensi biomassa dan energi alternatif desa",
+        "Dialog kebijakan energi berkelanjutan",
+        "Penguatan energi masyarakat di wilayah terpencil"
+    ]
+  },
+  "gambut": {
+    "title": "Gambut",
+    "description": "[ID] Peat ecosystems are a strategic priority for RISE due to their critical role in climate regulation, biodiversity, and community livelihoods in Riau. We focus on research, restoration, and sustainable peatland governance.",
+    "fokusGambutTitle": "Fokus Program Gambut",
+    "fokusGambut": [
+        "Restorasi dan rewetting lahan gambut terdegradasi",
+        "Riset emisi dan tata kelola karbon gambut",
+        "Pengembangan paludikultur dan ekonomi alternatif",
+        "Advokasi kebijakan perlindungan ekosistem gambut"
+    ]
+  },
+  "ketahananPangan": {
+    "title": "Ketahanan Pangan",
+    "description": "Memperkuat kemampuan masyarakat memenuhi kebutuhan pangan secara mandiri, sehat, dan berkelanjutan melalui praktik pertanian ramah lingkungan.",
+    "strategyTitle": "Strategi",
+    "fokus": {
+      "kedaulatanPangan": "Kedaulatan pangan lokal",
+      "pertanianEkologis": "Pertanian ekologis dan organik",
+      "kebunPangan": "Kebun pangan komunitas",
+      "penguatanRantai": "Penguatan rantai pasok pangan adil"
+    }
+  },
+  "konflikAgraria": {
+    "title": "Konflik Agraria",
+    "description": "Konflik agraria dan tata kelola lahan menjadi isu krusial di Riau. RISE mendukung penyelesaian berkeadilan melalui pendampingan, riset, dan dialog berbasis hak masyarakat.",
+    "fokus": {
+        "item1": "Advokasi hak atas tanah dan wilayah adat",
+        "item2": "Pendampingan masyarakat terdampak konflik lahan",
+        "item3": "Fasilitasi dialog multipihak",
+        "item4": "Kajian konflik sumber daya alam dan tata ruang"
+    }
+  },
+  "mangrove": {
+      "title": "Mangrove",
+      "description": "Mangrove merupakan ekosistem pesisir strategis yang berperan penting dalam mitigasi perubahan iklim, perlindungan garis pantai, serta keberlanjutan kehidupan sosial-ekonomi masyarakat pesisir. Di wilayah Riau, ekosistem mangrove menghadapi tekanan akibat alih fungsi lahan, abrasi, dan degradasi lingkungan sehingga membutuhkan pengelolaan dan restorasi yang berkelanjutan.",
+      "fokusProgram": {
+          "chip": "Fokus Program",
+          "title": "Ekosistem Mangrove",
+          "description": "RISE mengembangkan berbagai inisiatif riset, pendampingan, dan penguatan data sosial-ekologi terkait ekosistem mangrove sebagai bagian dari upaya membangun ketahanan lingkungan dan ekonomi masyarakat pesisir secara berkelanjutan.",
+          "list": {
+              "restorasi": "Restorasi dan rehabilitasi mangrove",
+              "pemetaan": "Pemetaan tutupan mangrove Riau",
+              "penguatan": "Penguatan mata pencaharian berbasis mangrove",
+              "integrasi": "Integrasi data mangrove dalam pusat data RISE"
+          }
+      }
+  },
+  "sampah": {
+    "title": "Sampah",
+    "description": "Mengatasi masalah sampah melalui pendekatan ekonomi sirkular, pengelolaan berbasis komunitas, dan kampanye perubahan perilaku untuk mengurangi sampah plastik di darat dan laut.",
+    "fokus": [
+        "Bank sampah dan daur ulang komunitas",
+        "Edukasi pengurangan sampah plastik",
+        "Kajian timbulan sampah dan kebijakan pengelolaan",
+        "Inovasi produk dari material daur ulang"
+    ]
+  },
+  "artikelIlmiah": { "title": "Artikel Ilmiah", "description": "Publikasi ilmiah hasil penelitian lingkungan, sosial, dan kebijakan.", "loading": "Memuat...", "view": "Lihat" },
+  "infografisData": { "failedToLoad": "Gagal memuat data infografis.", "title": "Infografis Data", "subtitle": "Visualisasi data sosial-ekologis dari Riau Socio-Ecological Data Center.", "loading": "Memuat..." },
+  "laporanPenelitian": { "title": "Laporan Penelitian", "description": "Laporan lengkap kajian lapangan, analisis data, dan temuan strategis.", "loading": "Memuat...", "errorLoad": "Gagal memuat data laporan penelitian. {{message}}", "download": "Unduh", "soon": "Segera" },
+  "policyBrief": { "title": "Policy Brief", "description": "Ringkasan kebijakan berbasis bukti untuk pengambil keputusan dan pemangku kepentingan.", "loading": "Memuat...", "error": "Gagal memuat data policy brief.", "download": "Unduh", "soon": "Segera" },
+  "buku": { "pageTitle": "Buku & Modul", "pageDescription": "Buku panduan dan modul pelatihan untuk edukasi lingkungan dan pemberdayaan.", "loading": "Memuat...", "errorLoad": "Gagal memuat data buku." },
+  "dampak": { "title": "Dampak Kami", "description": "[ID] This page showcases the tangible impacts of our programs on communities and ecosystems. We present our achievements through data, stories, and visual evidence to ensure transparency and accountability." },
+  "insight": { "errorLoad": "Gagal memuat data insight & opini.", "title": "Insight & Opini", "description": "Wacana, analisis, dan opini ahli Yayasan RISE tentang isu sosial-ekologis terkini.", "loading": "Memuat...", "cta": "Artikel lengkap akan dipublikasikan secara berkala. Kunjungi juga", "ctaLink": "Publikasi & Riset" },
+  "ekonomiHijau": { "title": "Ekonomi Hijau", "description": "[ID] Promoting community-based economic development models that are environmentally friendly, sustainable, and capable of improving local welfare." },
+  "isuPrioritas": { "title": "Isu Prioritas", "description": "Delapan isu strategis yang menjadi fokus advokasi, riset, dan aksi lapangan Yayasan RISE di Riau dan Indonesia.", "issueNumber": "Isu {{number}}", "seeDetails": "Lihat detail" },
+  "perubahanIklim": { "title": "Perubahan Iklim", "description": "Krisis iklim menuntut aksi adaptasi dan mitigasi berbasis pengetahuan serta partisipasi masyarakat di wilayah rawan, termasuk Riau sebagai lanskap gambut dan kehutanan penting.", "priorityArea": { "title": "Area Prioritas", "items": ["Adaptasi dan mitigasi perubahan iklim", "Kajian emisi dan kebijakan iklim", "Ketahanan masyarakat terhadap dampak iklim", "Transisi rendah karbon di tingkat lokal"] } },
+  "kegiatan": { "title": "Kegiatan", "description": "[ID] Explore our ongoing and past activities, from community workshops to national-level policy dialogues. This section provides insight into our hands-on work." },
+  "mitra": { "title": "Mitra & Kolaborasi Kami", "subtitle": "Kolaborasi strategis dengan lembaga mitra memperkuat dampak program sosial-ekologis di Riau.", "loading": "Memuat...", "error": { "loadFailed": "Gagal memuat data mitra." }, "group": { "donors": "Donatur", "collaborators": "Kolaborator", "sponsors": "Sponsor" } },
+  "communityEmpowerment": { "title": "Pemberdayaan Komunitas", "description": "Penguatan kapasitas masyarakat melalui pendekatan partisipatif dan berkelanjutan untuk meningkatkan ketahanan ekonomi, pangan, energi, dan lingkungan masyarakat lokal.", "focusTitle": "Fokus Program", "focusItems": { "foodSecurity": "Ketahanan Pangan", "wasteManagement": "Pengelolaan Sampah", "greenEconomy": "Ekonomi Hijau & Energi Terbarukan" }, "activitiesTitle": "Bentuk Kegiatan", "activityItems": { "trainingAndMentoring": "Pelatihan dan pendampingan masyarakat", "sustainableGreenBusiness": "Pengembangan usaha hijau berkelanjutan", "communityInstitution": "Penguatan kelembagaan komunitas", "localFoodProgram": "Program pangan lokal dan pertanian ekologis" } },
+  "programKerja": { "title": "Program Kerja", "description": "[ID] Our work is structured into five main programs, each addressing a critical aspect of socio-ecological sustainability in Riau." },
+  "publikasiRiset": { "title": "Publikasi & Riset", "description": "Repositori pengetahuan Yayasan RISE — dari artikel ilmiah hingga infografis data untuk mendukung advokasi dan kebijakan berkelanjutan.", "lihatDetail": "Lihat detail" },
+  "legalitas": { "title": "Legalitas", "pdfTitle": "Dokumen Legalitas Yayasan RISE", "noPdfSupport": "Browser Anda tidak mendukung tampilan PDF.", "downloadLink": "Klik di sini untuk mengunduh.", "downloadButton": "Unduh Dokumen Legalitas" },
+  "nilaiPendekatan": { "breadcrumb": "← Tentang Kami", "title": "Nilai & Pendekatan", "nilai": { "keadilan": { "title": "Keadilan Sosial-Ekologis", "desc": "Hak masyarakat dan kesehatan ekosistem diperlakukan setara dalam setiap intervensi." }, "pengetahuan": { "title": "Berbasis Pengetahuan", "desc": "Keputusan dan advokasi didukung riset, data, dan bukti ilmiah yang aplikatif." }, "partisipatif": { "title": "Partisipatif", "desc": "Masyarakat terlibat aktif sejak perencanaan hingga evaluasi program." }, "kolaboratif": { "title": "Kolaboratif", "desc": "Sinergi dengan mitra pemerintah, akademisi, CSO, dan sektor swasta." }, "transparan": { "title": "Transparan", "desc": "Keterbukaan informasi dan akuntabilitas dalam pelaksanaan program." } }, "pendekatan": { "title": "Pendekatan Kerja", "list": ["Integrasi perspektif sosial, ekonomi, dan lingkungan (pendekatan holistik)", "Kombinasi riset, pemberdayaan, edukasi, dan advokasi kebijakan", "Pendampingan jangka panjang berbasis kebutuhan lokal", "Pemanfaatan data spasial dan partisipatif untuk perencanaan"] } },
+  "profil": { "title": "Profil", "description": { "paragraph1": "<strong>Yayasan RISE (Sosial Ekologis Indonesia)</strong> adalah sebuah lembaga non-profit yang berfokus pada integrasi antara pemberdayaan sosial masyarakat dan pelestarian ekosistem lingkungan di Indonesia. Kami percaya bahwa kesejahteraan manusia tidak dapat dipisahkan dari kesehatan alam sekitarnya.", "paragraph2": "Didirikan dengan semangat kolaborasi, kami menjalankan berbagai program mulai dari edukasi lingkungan, pengembangan ekonomi kreatif berbasis sumber daya alam berkelanjutan, hingga advokasi kebijakan ekologis. Melalui pendekatan yang holistik, RISE berkomitmen untuk menjadi jembatan bagi terciptanya harmoni antara kemajuan sosial dan keberlanjutan bumi.", "paragraph3": "Fokus utama kami meliputi restorasi lahan kritis, manajemen limbah komunitas, dan pendampingan masyarakat adat dalam menjaga kearifan lokal yang mendukung kelestarian alam." } },
+  "struktur": { "judul": "Struktur Organisasi", "tombol": { "tutup": "Tutup", "lihatProfil": "Lihat profil" }, "posisi": { "pembina": "Pembina", "ketua": "Ketua", "sekretaris": "Sekretaris", "bendahara": "Bendahara", "pengawas": "Pengawas" }, "deskripsi": { "pembina": "M. Rawa El Amady...", "ketua": "Anto Ariyanto...", "sekretaris": "Istiqomah Marfuah...", "bendahara": "Bertanggung jawab atas...", "pengawas": "lahir di Inderapura..." } },
+  "tentangKami": { "pageTitle": "Tentang Kami", "pageDescription": "Mengenal identitas, nilai, legalitas, dan tim di balik Yayasan RISE Sosial Ekologis Indonesia.", "sub": "Sub", "lihatDetail": "Lihat detail" },
+  "timPakar": {
+    "title": "Tim & Tenaga Pakar",
+    "description": "Sinergi profesional multidisiplin di balik gerakan RISE — dari riset hingga pendampingan lapangan.",
+    "errorLoad": "Gagal memuat data tim pakar."
+  },
+  "visiMisi": { "title": "Visi & Misi", "visi": { "title": "Visi", "description": "Mewujudkan masa depan Indonesia yang adil, berkelanjutan, dan berbasis pengetahuan melalui harmoni antara pemberdayaan sosial masyarakat dan pelestarian ekosistem." }, "misi": { "title": "Misi", "items": ["Menghasilkan riset dan pengetahuan aplikatif di bidang sosial, lingkungan, dan kebijakan berkelanjutan.", "Memberdayakan masyarakat melalui pendekatan partisipatif dalam pangan, energi, sampah, dan ekonomi hijau.", "Memfasilitasi penyelesaian konflik sosial-ekologis secara dialogis dan berkeadilan.", "Meningkatkan literasi lingkungan dan kesadaran publik menuju gaya hidup rendah karbon.", "Menyediakan data sosial-ekologis terbuka untuk mendukung transparansi dan kebijakan berbasis bukti."] } }
 }
