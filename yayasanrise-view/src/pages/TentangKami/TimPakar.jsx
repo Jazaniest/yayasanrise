@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { getTimPakar } from "../../services/timPakarService";
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 const LOGO_URL = "/assets/logo.png";
 
 const TimPakar = () => {
+  const { t } = useTranslation();
   const [tim, setTim] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -16,13 +18,13 @@ const TimPakar = () => {
         const data = await getTimPakar();
         setTim(data);
       } catch (err) {
-        setError("Gagal memuat data tim pakar." + err.message);
+        setError(t("timPakar.errorLoad") + err.message);
       } finally {
         setLoading(false);
       }
     };
     fetchData();
-  }, []);
+  }, [t]);
 
   return (
     <div className="relative min-h-screen w-full font-sans bg-slate-50">
@@ -38,13 +40,13 @@ const TimPakar = () => {
           <div className="hidden md:block w-12" /> {/* This is the placeholder for centering */}
         </header>
         <main className="rise-main max-w-5xl">
-          <Link to="/tentang-kami" className="rise-breadcrumb">← Tentang Kami</Link>
-          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">Tim & Tenaga Pakar</h1>
+          <Link to="/tentang-kami" className="rise-breadcrumb">← {t("tentangKami.pageTitle")}</Link>
+          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">{t("timPakar.title")}</h1>
           <p className="text-center text-gray-600 max-w-xl mb-10 font-light text-sm">
-            Sinergi profesional multidisiplin di balik gerakan RISE — dari riset hingga pendampingan lapangan.
+            {t("timPakar.description")}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
-            {loading && <p className="text-center text-gray-500 col-span-full">Memuat...</p>}
+            {loading && <p className="text-center text-gray-500 col-span-full">{t("loading.message")}</p>}
             {error && <p className="text-center text-red-500 col-span-full">{error}</p>}
             {!loading && !error && tim.map((pakar) => (
               <div key={pakar.id} className="text-center">
