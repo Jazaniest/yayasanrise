@@ -1,15 +1,12 @@
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
+import { useTranslation } from "react-i18next";
 const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
 
 const EkonomiHijau = () => {
-  const fokus = [
-    "Pengembangan usaha hijau berkelanjutan",
-    "Ekonomi kreatif berbasis sumber daya alam",
-    "Pendampingan UMKM ramah lingkungan",
-    "Kajian kebijakan ekonomi hijau",
-  ];
+  const { t } = useTranslation();
+  const fokus = t('ekonomiHijau.fokus', { returnObjects: true }) || [];
 
   return (
     <div className="relative min-h-screen w-full font-sans bg-slate-50">
@@ -25,10 +22,9 @@ const EkonomiHijau = () => {
           <div className="hidden md:block w-12" /> {/* This is the placeholder for centering */}
         </header>
         <main className="rise-main">
-          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">Ekonomi Hijau</h1>
+          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">{t('ekonomiHijau.title')}</h1>
           <p className="text-center text-gray-600 max-w-2xl mb-8 font-light leading-relaxed">
-            Model ekonomi yang mengharmoniskan kesejahteraan masyarakat dengan pelestarian
-            lingkungan melalui inovasi, kewirausahaan, dan kebijakan berkelanjutan.
+            {t('ekonomiHijau.description')}
           </p>
           <div className="rise-card">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

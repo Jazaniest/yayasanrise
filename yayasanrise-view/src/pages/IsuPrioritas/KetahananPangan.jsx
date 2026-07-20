@@ -2,13 +2,15 @@ import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const KetahananPangan = () => {
+  const { t } = useTranslation();
   const fokus = [
-    "Kedaulatan pangan lokal",
-    "Pertanian ekologis dan organik",
-    "Kebun pangan komunitas",
-    "Penguatan rantai pasok pangan adil",
+    "ketahananPangan.fokus.kedaulatanPangan",
+    "ketahananPangan.fokus.pertanianEkologis",
+    "ketahananPangan.fokus.kebunPangan",
+    "ketahananPangan.fokus.penguatanRantai",
   ];
 
   return (
@@ -25,18 +27,17 @@ const KetahananPangan = () => {
           <div className="hidden md:block w-12" /> {/* This is the placeholder for centering */}
         </header>
         <main className="rise-main">
-          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">Ketahanan Pangan</h1>
+          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">{t('ketahananPangan.title')}</h1>
           <p className="text-center text-gray-600 max-w-2xl mb-8 font-light leading-relaxed">
-            Memperkuat kemampuan masyarakat memenuhi kebutuhan pangan secara mandiri, sehat,
-            dan berkelanjutan melalui praktik pertanian ramah lingkungan.
+            {t('ketahananPangan.description')}
           </p>
           <div className="rise-card">
-            <h2 className="rise-section-title">Strategi</h2>
+            <h2 className="rise-section-title">{t('ketahananPangan.strategyTitle')}</h2>
             <ul className="space-y-3 text-gray-700">
               {fokus.map((f, i) => (
                 <li key={f} className="flex items-center gap-3">
                   <span className="w-7 h-7 rounded-full bg-rise-green text-white text-xs flex items-center justify-center shrink-0">{i + 1}</span>
-                  {f}
+                  {t(f)}
                 </li>
               ))}
             </ul>

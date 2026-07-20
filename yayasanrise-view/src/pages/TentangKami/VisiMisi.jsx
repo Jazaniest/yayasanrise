@@ -1,28 +1,23 @@
-const VisiMisi = () => {
-  const visi = "Mewujudkan masa depan Indonesia yang adil, berkelanjutan, dan berbasis pengetahuan melalui harmoni antara pemberdayaan sosial masyarakat dan pelestarian ekosistem.";
+import { useTranslation } from "react-i18next";
 
-  const misi = [
-    "Menghasilkan riset dan pengetahuan aplikatif di bidang sosial, lingkungan, dan kebijakan berkelanjutan.",
-    "Memberdayakan masyarakat melalui pendekatan partisipatif dalam pangan, energi, sampah, dan ekonomi hijau.",
-    "Memfasilitasi penyelesaian konflik sosial-ekologis secara dialogis dan berkeadilan.",
-    "Meningkatkan literasi lingkungan dan kesadaran publik menuju gaya hidup rendah karbon.",
-    "Menyediakan data sosial-ekologis terbuka untuk mendukung transparansi dan kebijakan berbasis bukti.",
-  ];
+const VisiMisi = () => {
+  const { t } = useTranslation();
+  const misi = t("visiMisi.misi.items", { returnObjects: true }) || [];
 
   return (
     <main className="relative z-0 grow w-full max-w-5xl mx-auto px-4 md:px-8 py-16">
-      <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-12">Visi & Misi</h1>
+      <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-12">{t("visiMisi.title")}</h1>
 
       <section className="rise-card mb-10 bg-linear-to-br from-emerald-50/80 to-white">
         <h2 className="text-2xl font-serif text-rise-green mb-4 flex items-center gap-2">
-          <span className="w-2 h-8 bg-rise-green rounded-full" /> Visi
+          <span className="w-2 h-8 bg-rise-green rounded-full" /> {t("visiMisi.visi.title")}
         </h2>
-        <p className="text-gray-700 text-lg leading-relaxed font-light italic">{visi}</p>
+        <p className="text-gray-700 text-lg leading-relaxed font-light italic">{t("visiMisi.visi.description")}</p>
       </section>
 
       <section>
         <h2 className="text-2xl font-serif text-gray-800 mb-6 flex items-center gap-2">
-          <span className="w-2 h-8 bg-rise-green rounded-full" /> Misi
+          <span className="w-2 h-8 bg-rise-green rounded-full" /> {t("visiMisi.misi.title")}
         </h2>
         <div className="space-y-4">
           {misi.map((text, index) => (

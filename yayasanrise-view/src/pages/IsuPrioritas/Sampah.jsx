@@ -1,14 +1,16 @@
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
+import { useTranslation } from "react-i18next";
 const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
 
 const Sampah = () => {
+  const { t } = useTranslation();
   const fokus = [
-    "Pengelolaan sampah berbasis komunitas",
-    "Ekonomi sirkular dan daur ulang",
-    "Kampanye pengurangan sampah plastik",
-    "Bank sampah dan usaha hijau skala lokal",
+    t("isuPrioritas.sampah.fokus.0"),
+    t("isuPrioritas.sampah.fokus.1"),
+    t("isuPrioritas.sampah.fokus.2"),
+    t("isuPrioritas.sampah.fokus.3"),
   ];
 
   return (
@@ -25,13 +27,12 @@ const Sampah = () => {
           <div className="hidden md:block w-12" /> {/* This is the placeholder for centering */}
         </header>
         <main className="rise-main">
-          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">Sampah</h1>
+          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">{t("isuPrioritas.sampah.title")}</h1>
           <p className="text-center text-gray-600 max-w-2xl mb-8 font-light leading-relaxed">
-            Pengelolaan sampah yang inklusif dan berkelanjutan mengurangi pencemaran lingkungan
-            sekaligus membuka peluang ekonomi hijau bagi masyarakat.
+            {t("isuPrioritas.sampah.description")}
           </p>
           <div className="rise-card">
-            <h2 className="rise-section-title">Pendekatan</h2>
+            <h2 className="rise-section-title">{t("isuPrioritas.sampah.approach")}</h2>
             <ul className="space-y-3 text-gray-700 text-sm md:text-base">
               {fokus.map((f) => (
                 <li key={f} className="flex gap-2"><span className="text-rise-green">♻</span>{f}</li>

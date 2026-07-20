@@ -2,8 +2,10 @@ import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Gambut = () => {
+  const { t } = useTranslation();
   const fokusGambut = [
     "Restorasi dan rewetting lahan gambut",
     "Tata kelola berkelanjutan ekosistem gambut",
@@ -31,32 +33,29 @@ const Gambut = () => {
           <div className="hidden md:block w-12" /> {/* This is the placeholder for centering */}
         </header>
         <main className="rise-main max-w-4xl">
-          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">Gambut</h1>
+          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">{t('isuPrioritas.gambut.title')}</h1>
           <p className="text-center text-gray-600 max-w-2xl mb-8 font-light leading-relaxed">
-            Ekosistem gambut menyimpan karbon besar dan menjadi prioritas restorasi serta
-            perlindungan kebijakan di Indonesia, khususnya di wilayah Riau.
+            {t('isuPrioritas.gambut.description')}
           </p>
           <div className="rise-card space-y-5 mb-8">
-            <h2 className="rise-section-title">Fokus: Lahan Gambut</h2>
+            <h2 className="rise-section-title">{t('isuPrioritas.gambut.fokusGambutTitle')}</h2>
             <ul className="space-y-3 text-gray-700 text-sm md:text-base">
-              {fokusGambut.map((f) => (
-                <li key={f} className="flex gap-2"><span className="text-rise-green">▸</span>{f}</li>
+              {fokusGambut.map((f, i) => (
+                <li key={f} className="flex gap-2"><span className="text-rise-green">▸</span>{t(`isuPrioritas.gambut.fokusGambut.${i}`)}</li>
               ))}
             </ul>
           </div>
 
           <section id="mangrove" className="scroll-mt-24 w-full">
             <div className="rise-card space-y-5 border-emerald-600/40">
-              <span className="rise-chip">Isu terkait</span>
-              <h2 className="text-2xl font-serif text-gray-800 -mt-2">Mangrove</h2>
+              <span className="rise-chip">{t('isuPrioritas.gambut.isuTerkait')}</span>
+              <h2 className="text-2xl font-serif text-gray-800 -mt-2">{t('isuPrioritas.gambut.mangroveTitle')}</h2>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Mangrove merupakan ekosistem pesisir strategis untuk mitigasi iklim, perlindungan
-                pesisir, dan kehidupan masyarakat pesisir. RISE mengintegrasikan isu mangrove dalam
-                riset dan pusat data sosial-ekologis Riau.
+                {t('isuPrioritas.gambut.mangroveDescription')}
               </p>
               <ul className="space-y-3 text-gray-700 text-sm md:text-base">
-                {fokusMangrove.map((f) => (
-                  <li key={f} className="flex gap-2"><span className="text-rise-green">▸</span>{f}</li>
+                {fokusMangrove.map((f, i) => (
+                  <li key={f} className="flex gap-2"><span className="text-rise-green">▸</span>{t(`isuPrioritas.gambut.fokusMangrove.${i}`)}</li>
                 ))}
               </ul>
             </div>

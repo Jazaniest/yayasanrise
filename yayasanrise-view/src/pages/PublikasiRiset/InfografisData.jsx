@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { getInfografis } from "../../services/publikasiService";
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
@@ -6,6 +7,7 @@ const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
 
 const InfografisData = () => {
+  const { t } = useTranslation();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -16,13 +18,13 @@ const InfografisData = () => {
         const data = await getInfografis();
         setItems(data);
       } catch (err) {
-        setError("Gagal memuat data infografis." + err.message);
+        setError(t('infografisData.failedToLoad') + err.message);
       } finally {
         setLoading(false);
       }
     };
     fetchData();
-  }, []);
+  }, [t]);
 
   return (
     <div className="relative min-h-screen w-full font-sans bg-slate-50">
@@ -38,12 +40,12 @@ const InfografisData = () => {
           <div className="hidden md:block w-12" /> {/* This is the placeholder for centering */}
         </header>
         <main className="rise-main max-w-4xl">
-          <h1 className="text-4xl font-serif text-gray-800 text-center mb-2">Infografis Data</h1>
+          <h1 className="text-4xl font-serif text-gray-800 text-center mb-2">{t('infografisData.title')}</h1>
           <p className="text-center text-gray-600 text-sm mb-8 font-light">
-            Visualisasi data sosial-ekologis dari Riau Socio-Ecological Data Center.
+            {t('infografisData.subtitle')}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-            {loading && <p className="text-center text-gray-500 col-span-full">Memuat...</p>}
+            {loading && <p className="text-center text-gray-500 col-span-full">{t('infografisData.loading')}</p>}
             {error && <p className="text-center text-red-500 col-span-full">{error}</p>}
             {!loading && !error && items.map((item) => (
               <a

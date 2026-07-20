@@ -1,49 +1,52 @@
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
-const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+const LOGO_URL = "/assets/logo.png";
 
 const IsuPrioritas = () => {
+    const { t } = useTranslation();
     // Data array yang disesuaikan dengan gambar fokus isu prioritas
     const subMenus = [
         {
-            title: "Perubahan Iklim",
-            desc: "Langkah adaptasi dan mitigasi krisis iklim global melalui aksi nyata di tingkat lokal.",
+            title: t('isuPrioritas.subMenus.climateChange.title'),
+            desc: t('isuPrioritas.subMenus.climateChange.desc'),
             path: "/isu-prioritas/perubahan-iklim"
         },
         {
-            title: "Gambut",
-            desc: "Perlindungan, restorasi, dan tata kelola berkelanjutan ekosistem lahan gambut Indonesia.",
+            title: t('isuPrioritas.subMenus.peat.title'),
+            desc: t('isuPrioritas.subMenus.peat.desc'),
             path: "/isu-prioritas/gambut"
         },
         {
-            title: "Mangrove",
-            desc: "Restorasi ekosistem pesisir, pemetaan tutupan mangrove, dan penguatan mata pencaharian masyarakat.",
+            title: t('isuPrioritas.subMenus.mangrove.title'),
+            desc: t('isuPrioritas.subMenus.mangrove.desc'),
             path: "/isu-prioritas/gambut#mangrove"
         },
         {
-            title: "Energi",
-            desc: "Mendorong transisi energi bersih, berkeadilan, dan terbarukan bagi masyarakat.",
+            title: t('isuPrioritas.subMenus.energy.title'),
+            desc: t('isuPrioritas.subMenus.energy.desc'),
             path: "/isu-prioritas/energi"
         },
         {
-            title: "Konflik Agraria",
-            desc: "Advokasi hak atas tanah, resolusi konflik tata ruang, dan perlindungan masyarakat adat.",
+            title: t('isuPrioritas.subMenus.agrarianConflict.title'),
+            desc: t('isuPrioritas.subMenus.agrarianConflict.desc'),
             path: "/isu-prioritas/konflik-agraria"
         },
         {
-            title: "Sampah",
-            desc: "Manajemen limbah komunitas dan kampanye pengurangan sampah plastik berbasis sirkular ekonomi.",
+            title: t('isuPrioritas.subMenus.waste.title'),
+            desc: t('isuPrioritas.subMenus.waste.desc'),
             path: "/isu-prioritas/sampah"
         },
         {
-            title: "Ekonomi Hijau",
-            desc: "Pengembangan model ekonomi kreatif yang ramah lingkungan dan menyejahterakan warga.",
+            title: t('isuPrioritas.subMenus.greenEconomy.title'),
+            desc: t('isuPrioritas.subMenus.greenEconomy.desc'),
             path: "/isu-prioritas/ekonomi-hijau"
         },
         {
-            title: "Ketahanan Pangan",
-            desc: "Penguatan kedaulatan pangan lokal melalui praktik pertanian ekologis mandiri.",
+            title: t('isuPrioritas.subMenus.foodSecurity.title'),
+            desc: t('isuPrioritas.subMenus.foodSecurity.desc'),
             path: "/isu-prioritas/ketahanan-pangan"
         }
     ];
@@ -66,11 +69,11 @@ const IsuPrioritas = () => {
                     {/* Title Utama */}
                     <div className="text-center max-w-2xl mb-16 space-y-3">
                         <h1 className="text-4xl md:text-5xl font-serif text-gray-800 tracking-wide">
-                            Isu Prioritas
+                            {t('isuPrioritas.title')}
                         </h1>
                         <div className="w-16 h-1 bg-[#4A7C44] mx-auto rounded-full" />
                         <p className="text-gray-600 text-base md:text-lg font-light leading-relaxed pt-2">
-                            Delapan isu strategis yang menjadi fokus advokasi, riset, dan aksi lapangan Yayasan RISE di Riau dan Indonesia.
+                            {t('isuPrioritas.description')}
                         </p>
                     </div>
 
@@ -86,7 +89,7 @@ const IsuPrioritas = () => {
                                 <div>
                                     {/* Penomoran Estetik */}
                                     <span className="text-xs font-mono text-[#4A7C44] font-semibold bg-emerald-50 border border-emerald-100/60 px-3 py-1 rounded-full shadow-2xs">
-                                        Isu {index + 1 < 10 ? `0${index + 1}` : index + 1}
+                                        {t('isuPrioritas.issueNumber', { number: index + 1 < 10 ? `0${index + 1}` : index + 1 })}
                                     </span>
 
                                     {/* Judul Isu */}
@@ -102,7 +105,7 @@ const IsuPrioritas = () => {
 
                                 {/* Indikator Tombol Aksi */}
                                 <div className="flex items-center justify-end mt-6 text-[#4A7C44] opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">
-                                    <span className="text-xs font-medium mr-1.5">Lihat detail</span>
+                                    <span className="text-xs font-medium mr-1.5">{t('isuPrioritas.seeDetails')}</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                     </svg>

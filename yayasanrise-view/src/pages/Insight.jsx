@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { getInsights } from "../services/insightService";
 import Navbar from "../components/Navbar";
 import Background from "../components/Background";
@@ -7,6 +8,7 @@ import Footer from "../components/Footer";
 const LOGO_URL = "/assets/logo.png";
 
 const Insight = () => {
+  const { t } = useTranslation();
   const [artikel, setArtikel] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -17,13 +19,13 @@ const Insight = () => {
         const data = await getInsights();
         setArtikel(data);
       } catch (err) {
-        setError("Gagal memuat data insight & opini." + err.message);
+        setError(t('insight.errorLoad') + err.message);
       } finally {
         setLoading(false);
       }
     };
     fetchData();
-  }, []);
+  }, [t]);
 
   const truncate = (str, len) => {
     if (!str) return "";
@@ -44,12 +46,12 @@ const Insight = () => {
       <div className="relative grow">
         <Background />
         <main className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-3">Insight & Opini</h1>
+          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-3">{t('insight.title')}</h1>
           <p className="text-center text-gray-600 mb-10 font-light text-sm max-w-lg">
-            Wacana, analisis, dan opini ahli Yayasan RISE tentang isu sosial-ekologis terkini.
+            {t('insight.description')}
           </p>
           <div className="space-y-5 w-full">
-            {loading && <p className="text-center text-gray-500">Memuat...</p>}
+            {loading && <p className="text-center text-gray-500">{t('insight.loading')}</p>}
             {error && <p className="text-center text-red-500">{error}</p>}
             {!loading && !error && artikel.map((a) => (
               <article key={a.id} className="rise-card p-6! rounded-2xl! hover:shadow-md transition-shadow">
@@ -63,8 +65,8 @@ const Insight = () => {
             ))}
           </div>
           <p className="mt-8 text-xs text-gray-500 text-center italic">
-            Artikel lengkap akan dipublikasikan secara berkala. Kunjungi juga{" "}
-            <Link to="/publikasi-riset" className="text-rise-green hover:underline">Publikasi & Riset</Link>.
+            {t('insight.cta')}{" "}
+            <Link to="/publikasi-riset" className="text-rise-green hover:underline">{t('insight.ctaLink')}</Link>.
           </p>
         </main>
       </div>

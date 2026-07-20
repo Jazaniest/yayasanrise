@@ -2,19 +2,21 @@ import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const CommunityEmpowerment = () => {
+  const { t } = useTranslation();
   const fokus = [
-    "Ketahanan Pangan",
-    "Pengelolaan Sampah",
-    "Ekonomi Hijau & Energi Terbarukan",
+    "foodSecurity",
+    "wasteManagement",
+    "greenEconomy",
   ];
 
   const kegiatan = [
-    "Pelatihan dan pendampingan masyarakat",
-    "Pengembangan usaha hijau berkelanjutan",
-    "Penguatan kelembagaan komunitas",
-    "Program pangan lokal dan pertanian ekologis",
+    "trainingAndMentoring",
+    "sustainableGreenBusiness",
+    "communityInstitution",
+    "localFoodProgram",
   ];
 
   return (
@@ -32,29 +34,28 @@ const CommunityEmpowerment = () => {
         </header>
         <main className="rise-main">
           <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">
-            Community Empowerment
+            {t('communityEmpowerment.title')}
           </h1>
           <p className="text-center text-gray-600 max-w-2xl mb-8 leading-relaxed font-light">
-            Penguatan kapasitas masyarakat melalui pendekatan partisipatif dan berkelanjutan
-            untuk meningkatkan ketahanan ekonomi, pangan, energi, dan lingkungan masyarakat lokal.
+            {t('communityEmpowerment.description')}
           </p>
 
           <div className="rise-card space-y-6 mb-6">
-            <h2 className="rise-section-title">Fokus Program</h2>
+            <h2 className="rise-section-title">{t('communityEmpowerment.focusTitle')}</h2>
             <div className="flex flex-wrap gap-2">
               {fokus.map((item) => (
-                <span key={item} className="rise-chip">{item}</span>
+                <span key={item} className="rise-chip">{t(`communityEmpowerment.focusItems.${item}`)}</span>
               ))}
             </div>
           </div>
 
           <div className="rise-card">
-            <h2 className="rise-section-title">Bentuk Kegiatan</h2>
+            <h2 className="rise-section-title">{t('communityEmpowerment.activitiesTitle')}</h2>
             <ul className="space-y-3 text-gray-700">
               {kegiatan.map((k) => (
                 <li key={k} className="flex gap-3 text-sm md:text-base">
                   <span className="text-rise-green shrink-0">●</span>
-                  {k}
+                  {t(`communityEmpowerment.activityItems.${k}`)}
                 </li>
               ))}
             </ul>

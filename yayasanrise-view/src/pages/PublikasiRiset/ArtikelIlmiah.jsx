@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { getArtikelIlmiah } from "../../services/publikasiService";
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
@@ -6,6 +7,7 @@ const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
 
 const ArtikelIlmiah = () => {
+  const { t } = useTranslation();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -38,12 +40,12 @@ const ArtikelIlmiah = () => {
           <div className="hidden md:block w-12" /> {/* This is the placeholder for centering */}
         </header>
         <main className="rise-main max-w-3xl">
-          <h1 className="text-4xl font-serif text-gray-800 text-center mb-2">Artikel Ilmiah</h1>
+          <h1 className="text-4xl font-serif text-gray-800 text-center mb-2">{t('artikelIlmiah.title')}</h1>
           <p className="text-center text-gray-600 text-sm mb-8 font-light">
-            Publikasi ilmiah hasil penelitian lingkungan, sosial, dan kebijakan.
+            {t('artikelIlmiah.description')}
           </p>
           <div className="space-y-3 w-full">
-            {loading && <p className="text-center text-gray-500">Memuat...</p>}
+            {loading && <p className="text-center text-gray-500">{t('artikelIlmiah.loading')}</p>}
             {error && <p className="text-center text-red-500">{error}</p>}
             {!loading && !error && items.map((item) => (
               <a
@@ -57,7 +59,7 @@ const ArtikelIlmiah = () => {
                   <h3 className="font-medium text-gray-800 text-sm group-hover:text-rise-green">{item.judul}</h3>
                   <span className="text-xs text-gray-400">{item.penulis} &middot; {item.tahun}</span>
                 </div>
-                <span className="text-xs text-rise-green bg-emerald-50 px-2 py-1 rounded">Lihat</span>
+                <span className="text-xs text-rise-green bg-emerald-50 px-2 py-1 rounded">{t('artikelIlmiah.view')}</span>
               </a>
             ))}
           </div>

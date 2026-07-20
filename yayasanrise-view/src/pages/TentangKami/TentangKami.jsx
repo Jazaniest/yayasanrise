@@ -1,36 +1,36 @@
 import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 const LOGO_URL = "/assets/logo.png";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const TentangKami = () => {
+  const { t } = useTranslation();
+
+
   const subMenus = [
     {
-      title: "Profil Yayasan",
-      desc: "Mengenal lebih dalam sejarah, latar belakang, dan dedikasi Yayasan RISE.",
+      key: "profil",
       path: "/tentang-kami/profil"
     },
     {
-      title: "Visi & Misi",
-      desc: "Cita-cita besar dan langkah strategis kami dalam menjaga harmoni ekologi.",
+      key: "visiMisi",
       path: "/tentang-kami/visi-misi"
     },
     {
-      title: "Nilai & Pendekatan",
-      desc: "Prinsip dasar dan metodologi kerja holistik yang kami terapkan di lapangan.",
+      key: "nilaiPendekatan",
       path: "/tentang-kami/nilai-pendekatan"
     },
     {
-      title: "Legalitas",
-      desc: "Transparansi dokumen hukum dan izin resmi operasional yayasan.",
+      key: "legalitas",
       path: "/tentang-kami/legalitas"
     },
     {
-      title: "Tim & Tenaga Pakar",
-      desc: "Sinergi para profesional dan pakar ekologi di balik gerakan RISE.",
+      key: "timPakar",
       path: "/tentang-kami/tim-pakar"
     }
   ];
+
 
   return (
     <div className="relative min-h-screen w-full font-sans bg-slate-50">
@@ -50,11 +50,11 @@ const TentangKami = () => {
           {/* Title Utama */}
           <div className="text-center max-w-2xl mb-16 space-y-3">
             <h1 className="text-4xl md:text-5xl font-serif text-gray-800 tracking-wide">
-              Tentang Kami
+              {t("tentangKami.pageTitle")}
             </h1>
             <div className="w-16 h-1 bg-[#4A7C44] mx-auto rounded-full" />
             <p className="text-gray-600 text-base md:text-lg font-light leading-relaxed pt-2">
-              Mengenal identitas, nilai, legalitas, dan tim di balik Yayasan RISE Sosial Ekologis Indonesia.
+              {t("tentangKami.pageDescription")}
             </p>
           </div>
 
@@ -69,23 +69,23 @@ const TentangKami = () => {
                 <div>
                   {/* Badge Penomoran */}
                   <span className="text-xs font-mono text-[#4A7C44] font-semibold bg-emerald-50 border border-emerald-100/60 px-3 py-1 rounded-full shadow-2xs">
-                    Sub {index + 1 < 10 ? `0${index + 1}` : index + 1}
+                    {t("tentangKami.sub")} {index + 1 < 10 ? `0${index + 1}` : index + 1}
                   </span>
 
                   {/* Judul */}
                   <h3 className="text-xl font-serif text-gray-800 mt-5 mb-2.5 group-hover:text-emerald-800 transition-colors">
-                    {menu.title}
+                    {t(`tentangKami.${menu.key}.title`)}
                   </h3>
 
                   {/* Deskripsi */}
                   <p className="text-gray-600 text-sm leading-relaxed font-light">
-                    {menu.desc}
+                    {t(`tentangKami.${menu.key}.desc`)}
                   </p>
                 </div>
 
                 {/* Indikator Panah */}
                 <div className="flex items-center justify-end mt-6 text-[#4A7C44] opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">
-                  <span className="text-xs font-medium mr-1.5">Lihat detail</span>
+                  <span className="text-xs font-medium mr-1.5">{t("tentangKami.lihatDetail")}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>

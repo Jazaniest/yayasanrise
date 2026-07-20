@@ -2,13 +2,15 @@ import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const PerubahanIklim = () => {
+  const { t } = useTranslation();
   const fokus = [
-    "Adaptasi dan mitigasi perubahan iklim",
-    "Kajian emisi dan kebijakan iklim",
-    "Ketahanan masyarakat terhadap dampak iklim",
-    "Transisi rendah karbon di tingkat lokal",
+    t('perubahanIklim.priorityArea.items.0'),
+    t('perubahanIklim.priorityArea.items.1'),
+    t('perubahanIklim.priorityArea.items.2'),
+    t('perubahanIklim.priorityArea.items.3'),
   ];
 
   return (
@@ -25,13 +27,12 @@ const PerubahanIklim = () => {
           <div className="hidden md:block w-12" /> {/* This is the placeholder for centering */}
         </header>
         <main className="rise-main">
-          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">Perubahan Iklim</h1>
+          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">{t('perubahanIklim.title')}</h1>
           <p className="text-center text-gray-600 max-w-2xl mb-8 font-light leading-relaxed">
-            Krisis iklim menuntut aksi adaptasi dan mitigasi berbasis pengetahuan serta partisipasi
-            masyarakat di wilayah rawan, termasuk Riau sebagai lanskap gambut dan kehutanan penting.
+            {t('perubahanIklim.description')}
           </p>
           <div className="rise-card space-y-5">
-            <h2 className="rise-section-title">Area Prioritas</h2>
+            <h2 className="rise-section-title">{t('perubahanIklim.priorityArea.title')}</h2>
             <ul className="space-y-3 text-gray-700 text-sm md:text-base">
               {fokus.map((f) => (
                 <li key={f} className="flex gap-2"><span className="text-rise-green">▸</span>{f}</li>

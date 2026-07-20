@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { getMitra } from "../services/mitraService";
 import Navbar from "../components/Navbar";
 import Background from "../components/Background";
@@ -6,6 +7,7 @@ const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
 
 const Mitra = () => {
+  const { t } = useTranslation();
   const [mitra, setMitra] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -16,13 +18,13 @@ const Mitra = () => {
         const data = await getMitra();
         setMitra(data);
       } catch (err) {
-        setError("Gagal memuat data mitra." + err.message);
+        setError(t('mitra.error.loadFailed') + err.message);
       } finally {
         setLoading(false);
       }
     };
     fetchData();
-  }, []);
+  }, [t]);
 
   const groupByType = (data) => {
     return data.reduce((acc, curr) => {
@@ -68,20 +70,20 @@ const Mitra = () => {
         </header>
         <main className="rise-main max-w-5xl">
           <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-3">
-            Mitra & Kolaborasi Kami
+            {t('mitra.title')}
           </h1>
           <p className="text-center text-gray-600 mb-16 font-light max-w-xl">
-            Kolaborasi strategis dengan lembaga mitra memperkuat dampak program sosial-ekologis di Riau.
+            {t('mitra.subtitle')}
           </p>
 
-          {loading && <p className="text-center text-gray-500 col-span-full">Memuat...</p>}
+          {loading && <p className="text-center text-gray-500 col-span-full">{t('mitra.loading')}</p>}
           {error && <p className="text-center text-red-500 col-span-full">{error}</p>}
 
           {!loading && !error && (
             <>
-              {groupedMitra['donatur'] && renderGroup('Donatur', groupedMitra['donatur'])}
-              {groupedMitra['kolaborator'] && renderGroup('Kolaborator', groupedMitra['kolaborator'])}
-              {groupedMitra['sponsor'] && renderGroup('Sponsor', groupedMitra['sponsor'])}
+              {groupedMitra['donatur'] && renderGroup(t('mitra.group.donors'), groupedMitra['donatur'])}
+              {groupedMitra['kolaborator'] && renderGroup(t('mitra.group.collaborators'), groupedMitra['kolaborator'])}
+              {groupedMitra['sponsor'] && renderGroup(t('mitra.group.sponsors'), groupedMitra['sponsor'])}
             </>
           )}
         </main>

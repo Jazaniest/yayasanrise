@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { getAllKegiatan } from "../services/kegiatanService";
 import Navbar from "../components/Navbar";
 import Background from "../components/Background";
@@ -7,6 +8,7 @@ const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
 
 const Kegiatan = () => {
+  const { t } = useTranslation();
   const [kegiatan, setKegiatan] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -17,7 +19,7 @@ const Kegiatan = () => {
         const data = await getAllKegiatan();
         setKegiatan(data);
       } catch (err) {
-        setError("Gagal memuat data kegiatan.");
+        setError(t("kegiatan.loadError"));
         console.error(err);
       } finally {
         setLoading(false);
@@ -25,7 +27,7 @@ const Kegiatan = () => {
     };
 
     fetchKegiatan();
-  }, []);
+  }, [t]);
 
   return (
     <div className="min-h-screen w-full flex flex-col">
@@ -41,12 +43,12 @@ const Kegiatan = () => {
       <div className="relative grow">
         <Background />
         <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 mb-3 text-center">Kegiatan</h1>
+          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 mb-3 text-center">{t("kegiatan.pageTitle")}</h1>
           <p className="text-gray-600 text-center mb-12 font-light max-w-lg text-sm">
-            Dokumentasi kegiatan lapangan, pelatihan, diskusi, dan kampanye Yayasan RISE.
+            {t("kegiatan.pageDescription")}
           </p>
 
-          {loading && <p className="text-gray-500">Memuat data...</p>}
+          {loading && <p className="text-gray-500">{t("kegiatan.loading")}</p>}
           {error && <p className="text-red-500">{error}</p>}
 
           {!loading && !error && (

@@ -2,21 +2,23 @@ import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const NilaiPendekatan = () => {
+  const { t } = useTranslation();
   const nilai = [
-    { title: "Keadilan Sosial-Ekologis", desc: "Hak masyarakat dan kesehatan ekosistem diperlakukan setara dalam setiap intervensi." },
-    { title: "Berbasis Pengetahuan", desc: "Keputusan dan advokasi didukung riset, data, dan bukti ilmiah yang aplikatif." },
-    { title: "Partisipatif", desc: "Masyarakat terlibat aktif sejak perencanaan hingga evaluasi program." },
-    { title: "Kolaboratif", desc: "Sinergi dengan mitra pemerintah, akademisi, CSO, dan sektor swasta." },
-    { title: "Transparan", desc: "Keterbukaan informasi dan akuntabilitas dalam pelaksanaan program." },
+    { title: t("nilaiPendekatan.nilai.keadilan.title"), desc: t("nilaiPendekatan.nilai.keadilan.desc") },
+    { title: t("nilaiPendekatan.nilai.pengetahuan.title"), desc: t("nilaiPendekatan.nilai.pengetahuan.desc") },
+    { title: t("nilaiPendekatan.nilai.partisipatif.title"), desc: t("nilaiPendekatan.nilai.partisipatif.desc") },
+    { title: t("nilaiPendekatan.nilai.kolaboratif.title"), desc: t("nilaiPendekatan.nilai.kolaboratif.desc") },
+    { title: t("nilaiPendekatan.nilai.transparan.title"), desc: t("nilaiPendekatan.nilai.transparan.desc") },
   ];
 
   const pendekatan = [
-    "Integrasi perspektif sosial, ekonomi, dan lingkungan (pendekatan holistik)",
-    "Kombinasi riset, pemberdayaan, edukasi, dan advokasi kebijakan",
-    "Pendampingan jangka panjang berbasis kebutuhan lokal",
-    "Pemanfaatan data spasial dan partisipatif untuk perencanaan",
+    t("nilaiPendekatan.pendekatan.list.0"),
+    t("nilaiPendekatan.pendekatan.list.1"),
+    t("nilaiPendekatan.pendekatan.list.2"),
+    t("nilaiPendekatan.pendekatan.list.3"),
   ];
 
   return (
@@ -33,8 +35,8 @@ const NilaiPendekatan = () => {
           <div className="hidden md:block w-12" /> {/* This is the placeholder for centering */}
         </header>
         <main className="rise-main max-w-5xl">
-          <Link to="/tentang-kami" className="rise-breadcrumb">← Tentang Kami</Link>
-          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-10">Nilai & Pendekatan</h1>
+          <Link to="/tentang-kami" className="rise-breadcrumb">{t("nilaiPendekatan.breadcrumb")}</Link>
+          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-10">{t("nilaiPendekatan.title")}</h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mb-10">
             {nilai.map((n) => (
@@ -46,7 +48,7 @@ const NilaiPendekatan = () => {
           </div>
 
           <div className="rise-card w-full">
-            <h2 className="rise-section-title">Pendekatan Kerja</h2>
+            <h2 className="rise-section-title">{t("nilaiPendekatan.pendekatan.title")}</h2>
             <ul className="space-y-3">
               {pendekatan.map((p) => (
                 <li key={p} className="flex gap-3 text-gray-700 text-sm md:text-base">

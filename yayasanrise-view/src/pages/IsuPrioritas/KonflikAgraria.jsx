@@ -2,13 +2,15 @@ import Navbar from "../../components/Navbar";
 import Background from "../../components/Background";
 const LOGO_URL = "/assets/logo.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const KonflikAgraria = () => {
+  const { t } = useTranslation();
   const fokus = [
-    "Advokasi hak atas tanah dan wilayah adat",
-    "Pendampingan masyarakat terdampak konflik lahan",
-    "Fasilitasi dialog multipihak",
-    "Kajian konflik sumber daya alam dan tata ruang",
+    "konflikAgraria.fokus.item1",
+    "konflikAgraria.fokus.item2",
+    "konflikAgraria.fokus.item3",
+    "konflikAgraria.fokus.item4",
   ];
 
   return (
@@ -25,14 +27,13 @@ const KonflikAgraria = () => {
           <div className="hidden md:block w-12" /> {/* This is the placeholder for centering */}
         </header>
         <main className="rise-main">
-          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">Konflik Agraria</h1>
+          <h1 className="text-4xl md:text-5xl font-serif text-gray-800 text-center mb-4">{t('konflikAgraria.title')}</h1>
           <p className="text-center text-gray-600 max-w-2xl mb-8 font-light leading-relaxed">
-            Konflik agraria dan tata kelola lahan menjadi isu krusial di Riau. RISE mendukung
-            penyelesaian berkeadilan melalui pendampingan, riset, dan dialog berbasis hak masyarakat.
+            {t('konflikAgraria.description')}
           </p>
           <div className="rise-card space-y-4">
             {fokus.map((f) => (
-              <p key={f} className="p-3 rounded-lg bg-emerald-50/60 text-gray-700 text-sm border-l-4 border-rise-green">{f}</p>
+              <p key={f} className="p-3 rounded-lg bg-emerald-50/60 text-gray-700 text-sm border-l-4 border-rise-green">{t(f)}</p>
             ))}
           </div>
         </main>
