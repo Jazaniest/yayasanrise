@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { getVisitorStats } from '../services/analyticsService';
@@ -14,6 +14,7 @@ const VisitorStatsDisplay = () => {
       try {
         const data = await getVisitorStats();
         setStats(data);
+        //eslint-disable-next-line
       } catch (err) {
         setError(t('visitorStats.errorLoad'));
       } finally {
@@ -52,7 +53,7 @@ const VisitorStatsDisplay = () => {
   return (
     <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100">
       <h3 className="text-2xl font-serif text-gray-800 mb-8">{t('visitorStats.title')}</h3>
-      <div className="w-full h-[500px]">
+      <div className="w-full h-125">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={chartData}
